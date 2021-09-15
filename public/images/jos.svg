@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="333px" viewBox="0 0 500 333" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>JOS</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="90.8968112%" y1="0%" x2="-8.12560992%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FE5A00" offset="0%"></stop>
+            <stop stop-color="#FEB400" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="113.572426%" y2="123.484258%" id="linearGradient-3">
+            <stop stop-color="#027AA0" offset="0%"></stop>
+            <stop stop-color="#15D5C0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-10.0199022%" y1="50%" x2="114.04918%" y2="50%" id="linearGradient-4">
+            <stop stop-color="#FC3C00" offset="0%"></stop>
+            <stop stop-color="#FEB500" offset="66.1014282%"></stop>
+            <stop stop-color="#FEB600" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#FC8201" offset="0%"></stop>
+            <stop stop-color="#FFB401" offset="52.3897947%"></stop>
+            <stop stop-color="#FC8201" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-3.88989163%" y1="54.4354673%" x2="108.416931%" y2="40.0910022%" id="linearGradient-6">
+            <stop stop-color="#070356" offset="0%"></stop>
+            <stop stop-color="#028FAD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="JOS">
+            <rect id="Rectangle-7-Copy" fill="url(#linearGradient-1)" x="0" y="0" width="500" height="333"></rect>
+            <g transform="translate(55.000000, 17.000000)">
+                <path d="M316.175263,135.734441 C347.75421,134.153488 363.543684,112.020154 363.543684,112.020154 C363.543684,112.020154 373.598261,109.602419 376.964737,111.229678 C381.22984,113.291308 388.017368,120.715392 386.438421,123.086821 C373.017368,143.639201 356.842105,145.220153 348.543684,145.220154 C340.245263,145.220155 330,143.866667 319.736842,142.285714 C313.421052,139.914285 311.438421,136.524917 316.175263,135.734441 Z" id="Rectangle-11" fill="url(#linearGradient-2)"></path>
+                <path d="M305.991313,127.176813 C317.706842,136.740797 325.263158,143.07619 325.263158,143.07619 C325.263158,143.07619 305.32347,140.642431 281.8273,136.546058 C263.310389,133.31778 296.613616,119.521322 305.991313,127.176813 Z" id="Rectangle-8" fill="url(#linearGradient-3)"></path>
+                <path d="M134.102734,154.933333 C173.576419,150.980952 298.992721,52.1714286 362.940087,52.1714286 C388.992709,52.1714286 389.782183,73.5142857 389.782183,73.5142857 C389.782183,73.5142857 389.782183,110.666667 385.834815,124.104762 C377.940078,108.690476 356.624288,113.038095 356.624298,113.038095 C288.729563,124.104762 238.203248,167.580952 158.466403,165.209524 C158.466403,165.209524 128.576418,160.466667 134.102734,154.933333 Z" id="Rectangle-10" fill="url(#linearGradient-4)"></path>
+                <path d="M0,81.4190476 C0,34.7809524 44.2105263,14.2285714 88.4210526,1.58095238 C-15,68.7714286 146.842105,163.628571 161.052632,165.209524 C161.052632,165.209524 108.157896,163.628571 108.157895,163.628571 C82.8947368,162.047619 1.57894737,141.495238 0,81.4190476 Z" id="Rectangle-9" fill="url(#linearGradient-5)"></path>
+                <path d="M56.0526316,39.8194441 C65.5263158,-6.02817472 105.789474,0.29563461 105.789474,0.29563461 C176.842105,6.61944428 229.736842,80.6285714 256.578947,92.4857143 C256.578947,92.4857143 213.157895,117.286111 213.157895,117.286111 C213.157895,117.286111 104.210526,58.7908699 56.0526316,39.8194441 Z" id="Rectangle-8" fill="url(#linearGradient-6)"></path>
+            </g>
+            <text id="JOS-Electricity-Dist" font-family="LucidaGrande-Bold, Lucida Grande" font-size="46" font-weight="bold" fill="#000000">
+                <tspan x="94.1044922" y="250">JOS</tspan>
+                <tspan x="177.501953" y="250" font-family="LucidaGrande, Lucida Grande" font-weight="normal"> Electricity</tspan>
+                <tspan x="79.4150391" y="304" font-family="LucidaGrande, Lucida Grande" font-weight="normal">Distribution Plc</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

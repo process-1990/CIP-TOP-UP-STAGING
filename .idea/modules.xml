@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/cip.iml" filepath="$PROJECT_DIR$/.idea/cip.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pnue/.idea/pnue.iml" filepath="$PROJECT_DIR$/../pnue/.idea/pnue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../project 2/.idea/project 2.iml" filepath="$PROJECT_DIR$/../project 2/.idea/project 2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../wolid-ussd/.idea/ussd.iml" filepath="$PROJECT_DIR$/../wolid-ussd/.idea/ussd.iml" />
+    </modules>
+  </component>
+</project>

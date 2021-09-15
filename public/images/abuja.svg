@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="333px" viewBox="0 0 500 333" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>ABUJA</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="466.22807" cy="21.4912281" r="21.4912281"></circle>
+        <filter x="-47.7%" y="-24.4%" width="176.8%" height="176.8%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="-4" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ABUJA">
+            <rect id="Rectangle-7-Copy" fill="url(#linearGradient-1)" x="0" y="0" width="500" height="333"></rect>
+            <g id="Group-3" transform="translate(6.140351, 65.333333)">
+                <text id="ABUJA-ELECTRICITY-DI" font-family="ArialMT, Arial" font-size="19.5" font-weight="normal" letter-spacing="-0.230220288" fill="#000000">
+                    <tspan x="4.38596491" y="152.45614">ABUJA ELECTRICITY DISTRIBUTION COMPANY PLC</tspan>
+                </text>
+                <rect id="Rectangle-33" fill="#FF5500" x="0" y="167.54386" width="65.7894737" height="7.89473684" rx="2"></rect>
+                <rect id="Rectangle-33-Copy" fill="#66D1E1" x="83.3333333" y="167.54386" width="65.7894737" height="7.89473684" rx="2"></rect>
+                <rect id="Rectangle-33-Copy-2" fill="#DFFF00" x="166.666667" y="167.54386" width="65.7894737" height="7.89473684" rx="2"></rect>
+                <rect id="Rectangle-33-Copy-3" fill="#FFCF00" x="250" y="167.54386" width="65.7894737" height="7.89473684" rx="2"></rect>
+                <rect id="Rectangle-33-Copy-4" fill="#1D5585" x="333.333333" y="167.54386" width="65.7894737" height="7.89473684" rx="2"></rect>
+                <rect id="Rectangle-33-Copy-5" fill="#DA1E22" x="416.666667" y="167.54386" width="65.7894737" height="7.89473684" rx="2"></rect>
+                <path d="M236.842105,33.3333333 L310.342353,33.3333333 C326.915603,33.3333333 340.350877,46.7648526 340.350877,63.335146 L340.350877,85.787661 C340.350877,102.357205 326.925028,115.789474 310.342353,115.789474 L236.842105,115.789474 L236.842105,33.3333333 Z M261.403509,52.6315789 L261.403509,97.3684211 L305.665832,97.3684211 C311.738138,97.3684211 316.666667,92.4430339 316.666667,86.367261 L316.666667,63.632739 C316.666667,57.5471756 311.741425,52.6315789 305.665832,52.6315789 L261.403509,52.6315789 Z" id="Combined-Shape" fill="#0B0986"></path>
+                <path d="M345.614035,33.3333333 L409.469399,33.3333333 C426.040308,33.3333333 439.473684,46.7648526 439.473684,63.335146 L439.473684,85.787661 C439.473684,102.357205 426.050831,115.789474 409.469399,115.789474 L345.614035,115.789474 L345.614035,33.3333333 Z M345.614035,51.754386 L345.614035,97.3684211 L404.785988,97.3684211 C410.854873,97.3684211 415.789474,92.4430339 415.789474,86.367261 L415.789474,63.632739 C415.789474,57.5471756 410.863045,52.5699986 404.785988,52.4940354 L345.614035,51.754386 Z" id="Combined-Shape" fill="#0B0986" transform="translate(392.543860, 74.561404) scale(-1, 1) translate(-392.543860, -74.561404) "></path>
+                <path d="M49.4396397,46.2550127 C59.6805544,31.8516616 76.2844297,31.8517626 86.5252726,46.2550127 L135.964912,115.789474 L107.017544,115.789474 L91.9265154,94.4246469 L48.245614,94.4246459 L62.2807018,76.0040016 L78.9151063,76.0040003 L67.9824561,60.5263158 L28.0701754,115.789474 L0,115.789474 L49.4396397,46.2550127 Z" id="Rectangle-29" fill="#0B0986"></path>
+                <path d="M135.087719,58.3246667 C135.087719,44.5223344 146.280458,33.3333333 160.097032,33.3333333 L228.070175,33.3333333 L212.280702,52.6315789 L166.890721,52.6315789 C161.922376,52.6315789 157.894737,56.6688013 157.894737,61.6262336 L157.894737,65.7894737 L213.157895,65.7894737 L213.157895,82.4561404 L157.894737,82.4561404 L157.894737,87.4834866 C157.894737,92.4583248 161.915953,96.4912281 166.890721,96.4912281 L212.280702,96.4912281 L228.070175,115.789474 L160.097032,115.789474 C146.28477,115.789474 135.087719,104.604735 135.087719,90.7981403 L135.087719,58.3246667 Z" id="Rectangle-30" fill="#0B0986"></path>
+                <g id="Oval-9">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
+                <text id="PLC" font-family="Arial-BoldMT, Arial" font-size="13.5" font-weight="bold" letter-spacing="-0.159383267" fill="#0B0986">
+                    <tspan x="451.754386" y="27.0350877">PLC</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

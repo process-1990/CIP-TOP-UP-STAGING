@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="333px" viewBox="0 0 500 333" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>dstv</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="70.7106781%" gradientTransform="translate(0.500000,0.500000),scale(0.666000,1.000000),rotate(33.663615),translate(-0.500000,-0.500000)" id="radialGradient-1">
+            <stop stop-color="#02A2F6" offset="0%"></stop>
+            <stop stop-color="#013E5D" offset="100%"></stop>
+        </radialGradient>
+        <path d="M296.133568,151.142355 L323.374341,151.142355 L347.100176,182.776801 L296.133568,182.776801 L296.133568,151.142355 Z M109.841828,132.926552 C109.841828,132.926552 157.293497,128.532879 157.293497,157.531122 C157.293497,186.529364 109.841828,182.135691 109.841828,182.135691 L109.841828,132.926552 Z M86.115993,124.814404 L129.343196,124.814404 C177.127349,123.847917 188.759956,143.656629 188.759956,155.843574 C188.759956,168.03052 182.82184,173.867608 174.340213,180.316449 C204.832087,180.971937 226.576901,180.316449 226.577194,180.316449 C231.275279,180.317006 232.707877,177.762853 232.707877,175.93306 C232.707877,167.725394 219.21908,163.855793 212.899515,160.811373 C206.579949,157.766952 191.110212,154.465795 191.108777,139.390037 C191.107599,127.005057 208.043921,124.814404 212.899516,124.814404 L295.992937,124.814404 L295.99294,142.172371 L347.582933,142.172371 L373.779377,179.343007 L401.60575,142.172371 L413.749869,142.172371 L379.025317,190.719504 L286.60218,190.719503 C286.60218,190.719503 267.914234,192.793204 267.914234,174.934977 L267.914234,134.036652 L233.347244,134.036652 C226.577196,134.036652 214.697706,136.960971 220.626027,142.172371 C236.480914,152.621971 263.817705,162.064655 263.817705,173.443903 C263.817705,192.536909 227.303865,190.719502 227.303865,190.719502 L86.115993,190.719501 L86.115993,124.814404 Z" id="path-2"></path>
+        <filter x="-6.9%" y="-18.9%" width="113.7%" height="175.7%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="15" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dstv">
+            <rect id="Rectangle-5" fill="url(#radialGradient-1)" x="0" y="0" width="500" height="333"></rect>
+            <g id="Combined-Shape">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="333px" viewBox="0 0 500 333" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>KANO</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-2" points="64.9122807 83.3333333 150.877193 0 102.631579 67.5438596 121.929825 69.2982456 30.7017544 159.649123 86.8421053 85.0877193"></polygon>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#0000DB" offset="0%"></stop>
+            <stop stop-color="#000033" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="KANO">
+            <rect id="Rectangle-7-Copy" fill="url(#linearGradient-1)" x="0" y="0" width="500" height="333"></rect>
+            <g id="Group-5" transform="translate(17.543860, 77.228070)">
+                <text id="KEDCO" font-family="ArialMT, Arial" font-size="15.5" font-weight="normal" letter-spacing="17.2802849" fill="#414141">
+                    <tspan x="0" y="150.210526">KEDCO</tspan>
+                </text>
+                <text id="KANO-ELECTRICITY-DIS" font-family="ArialMT, Arial" font-size="6" font-weight="normal" letter-spacing="-0.360000014" fill="#414141">
+                    <tspan x="1.75438596" y="155.877193">KANO ELECTRICITY DISTRIBUTION COMPAN</tspan>
+                    <tspan x="117.920362" y="155.877193">Y</tspan>
+                </text>
+                <g id="Group-4">
+                    <g id="Rectangle-35">
+                        <use fill="#F7DF23" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        <path stroke="#B8BABB" stroke-width="4" d="M69.4786205,81.6922507 L136.417777,16.8022518 L101.004112,66.3813833 L98.9766428,69.2198402 L102.450507,69.5356461 L117.469326,70.9009932 L48.8810066,138.829809 L88.4398468,86.2907247 L90.6282717,83.3842228 L87.0015957,83.0940887 L69.4786205,81.6922507 Z"></path>
+                    </g>
+                    <polygon id="Rectangle-34" fill="url(#linearGradient-3)" points="0 29.8245614 35.0877193 29.8245614 35.0877193 69.2982456 71.9298246 29.8245615 118.421053 29.8245615 76.3157895 69.2982456 77.5303479 71.1200833 64.9122807 83.3333333 86.8421053 85.0877193 120.175439 135.087719 77.1929825 135.087719 53.5087719 92.1052632 35.0877193 108.77193 35.0877193 135.087719 0 135.087719"></polygon>
+                </g>
+                <text id="KANO-ELECTRICITY-DIS" font-family="Arial-BoldMT, Arial" font-size="22" font-weight="bold" letter-spacing="0.513333321" fill="#000054">
+                    <tspan x="137.719298" y="91.7894737">KANO ELECTRICITY</tspan>
+                    <tspan x="137.719298" y="116.789474">DISTRIBUTION COMPANY</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

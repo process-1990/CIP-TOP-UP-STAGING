@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b18fce3d-c81a-4451-a73e-1aaf3af2b6a7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1rSC6FHwhGr1qyp9NXaKKISevr1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210831_0001" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mbj" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\cip" />
+      <recent name="C:\xampp\htdocs\cip\consumer\methods" />
+      <recent name="C:\xampp\htdocs\cip\assets\img" />
+      <recent name="C:\xampp\htdocs\wolid-ussd" />
+      <recent name="C:\xampp\htdocs\pnue" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b18fce3d-c81a-4451-a73e-1aaf3af2b6a7" name="Default Changelist" comment="" />
+      <created>1618959926845</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618959926845</updated>
+      <workItem from="1618959933535" duration="16342000" />
+      <workItem from="1618991091532" duration="23065000" />
+      <workItem from="1619300426283" duration="23793000" />
+      <workItem from="1619379212203" duration="56561000" />
+      <workItem from="1619693470875" duration="575000" />
+      <workItem from="1619950931879" duration="25723000" />
+      <workItem from="1619987422101" duration="61579000" />
+      <workItem from="1620257279802" duration="15371000" />
+      <workItem from="1620311447684" duration="17363000" />
+      <workItem from="1620687198934" duration="15499000" />
+      <workItem from="1620913918638" duration="17166000" />
+      <workItem from="1621013117087" duration="2838000" />
+      <workItem from="1621150399453" duration="2676000" />
+      <workItem from="1621377968150" duration="7386000" />
+      <workItem from="1621985440997" duration="36065000" />
+      <workItem from="1622588521135" duration="22518000" />
+      <workItem from="1622902306058" duration="4085000" />
+      <workItem from="1624099080971" duration="151000" />
+      <workItem from="1624263962552" duration="586000" />
+      <workItem from="1624311373066" duration="27438000" />
+      <workItem from="1624436440462" duration="14274000" />
+      <workItem from="1626900143999" duration="3251000" />
+      <workItem from="1627633238294" duration="2338000" />
+      <workItem from="1627773351484" duration="24612000" />
+      <workItem from="1627847223668" duration="12209000" />
+      <workItem from="1627894105937" duration="5472000" />
+      <workItem from="1630314847927" duration="10525000" />
+      <workItem from="1630334954975" duration="1645000" />
+      <workItem from="1630446717545" duration="2159000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="580" y="184" key="FileChooserDialogImpl" timestamp="1630482793008">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="184" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1630482793008" />
+    <state x="634" y="349" key="NewPhpFileDialog" timestamp="1627899958555">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="634" y="349" key="NewPhpFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1627899958555" />
+    <state x="456" y="195" key="run.anything.popup" timestamp="1622597294472">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1622597294472" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1624400284535">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1624400284535" />
+  </component>
+</project>
