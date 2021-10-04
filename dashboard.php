@@ -27,7 +27,12 @@
                                 </span>
                                 <div class="media-body">
                                     <p class="mb-1" style="font-size: 11px !important;">Your Account Number</p>
-                                    <h6 class=""><span>WEMA BANK: </span><span style="text-align: right; font-Weight: 900; color: red"><?php echo isset($ud->account_number) ? $ud->account_number : "<a onclick='generateAcct()'>[ Generate Account ]</a>"; ?></span></h6>
+                                    <h6 style="display: none;"><span>WEMA BANK: </span><span
+                                            style="text-align: right; font-Weight: 900; color: red"><?php echo isset($ud->account_number) ? $ud->account_number : "<a onclick='generateAcct()'>[ Generate Account ]</a>"; ?></span>
+                                    </h6>
+                                    <h6><span>Rolez Microfinance Bank: </span><span
+                                            style="text-align: right; font-Weight: 900; color: red"><?php echo isset($ud->second_account_number) ? $ud->second_account_number : "Not Generated"; ?></span>
+                                    </h6>
                                 </div>
                             </div>
                         </div>
@@ -138,9 +143,9 @@
                 <div class="slideshow-container" style="border-radius: 20px !important; display: block;">
 
                     <div class="mySlides">
-                      <!--<div class="numbertext">1 / 2</div>-->
-                      <img src="public/images/cip-banner-1.jpg" style="width:100%">
-                      <!--<div class="text">Caption Text</div>-->
+                        <!--<div class="numbertext">1 / 2</div>-->
+                        <img src="public/images/cip-banner-1.jpg" style="width:100%">
+                        <!--<div class="text">Caption Text</div>-->
                     </div>
 
                     <div class="mySlides fade">
@@ -154,15 +159,15 @@
                         <img src="public/images/cip-banner-3.png" style="width:100%">
                         <!--<div class="text">Caption Two</div>-->
                     </div>
-                    
+
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                    
-                    </div>
-                    <div style="text-align:center margin-top: -40px; display: none;">
-                      <span class="dot" onclick="currentSlide(1)"></span> 
-                      <span class="dot" onclick="currentSlide(2)"></span> 
-                    </div>
+
+                </div>
+                <div style="text-align:center margin-top: -40px; display: none;">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                </div>
             </div>
         </div>
         <div class="row" id="tabs">
@@ -424,14 +429,14 @@
                                             </div>
                                         </div>
                                     </div>
-<!--                                    <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">-->
-<!--                                        <div class="widget-stat card">-->
-<!--                                            <div class="card-body p-0">-->
-<!--                                                <img src="public/images/cryto.png" width="100%" height="100%"-->
-<!--                                                    class="custom-img" />-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                    <!--                                    <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">-->
+                                    <!--                                        <div class="widget-stat card">-->
+                                    <!--                                            <div class="card-body p-0">-->
+                                    <!--                                                <img src="public/images/cryto.png" width="100%" height="100%"-->
+                                    <!--                                                    class="custom-img" />-->
+                                    <!--                                            </div>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
                                     <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">
                                         <div class="widget-stat card" onclick="goto('wallet-to-wallet', '', '');">
                                             <div class="card-body p-0">
@@ -484,7 +489,8 @@
                                 <div class="form-group">
                                     <input class="form-control" name="phone_number" id="phone_number" type="text"
                                         placeholder="Mobile number *">
-                                    <input type="hidden" class="form-control" name="identifier" id="identifier" type="text">
+                                    <input type="hidden" class="form-control" name="identifier" id="identifier"
+                                        type="text">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -499,11 +505,11 @@
                             </div>
                             <div class="col-lg-6 mb-2" id="data-type-lyt">
                                 <div class="form-group">
-                                    <select class="form-control" id="data-type" name="data-type"  onchange="typeChecker(this.value);"
-                                            onselect="typeChecker(this.id);">
+                                    <select class="form-control" id="data-type" name="data-type"
+                                        onchange="typeChecker(this.value);" onselect="typeChecker(this.id);">
                                         <option value="">Select Type</option>
-                                        <option value="mtn">MTN SME</option>
                                         <option value="mtn-gifting">MTN GIFTING</option>
+                                        <option value="mtn">MTN SME</option>
                                     </select>
                                 </div>
                             </div>
@@ -694,16 +700,19 @@
                             </div>
                             <div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <input class="form-control" name="power-buy-amount" id="power-buy-amount" type="number"
-                                           placeholder="Amount *" onkeyup="powerPurchaseCalculator(this.id);">
-                                    <input class="form-control" name="interest-amount" id="interest-amount" type="hidden" value="100">
+                                    <input class="form-control" name="power-buy-amount" id="power-buy-amount"
+                                        type="number" placeholder="Amount *"
+                                        onkeyup="powerPurchaseCalculator(this.id);">
+                                    <input class="form-control" name="interest-amount" id="interest-amount"
+                                        type="hidden" value="100">
                                 </div>
                             </div>
                             <div class="col-lg-12 mb-2">
                                 <div class="form-group">
-                                    <label class="text-white">Total Amount: (<small>A service charge of N100 is included)</small></label>
+                                    <label class="text-white">Total Amount: (<small>A service charge of N100 is
+                                            included)</small></label>
                                     <input class="form-control" name="power-amount" id="power-amount" type="number"
-                                           placeholder="Total amount" disabled>
+                                        placeholder="Total amount" disabled>
                                 </div>
                             </div>
                         </div>
@@ -742,7 +751,8 @@
                             <div class="col-lg-6 mb-1">
                                 <div class="form-group">
                                     <label class="text-white">Select network</label>
-                                    <select class="form-control" id="atc-carrier" name="atc-carrier" onchange="setNetworkTransfering()" onselect="setNetworkTransfering()">
+                                    <select class="form-control" id="atc-carrier" name="atc-carrier"
+                                        onchange="setNetworkTransfering()" onselect="setNetworkTransfering()">
                                         <option value="" selected>Select Carrier</option>
                                         <option value="MTN">MTN</option>
                                         <option value="Glo">Glo</option>
@@ -755,14 +765,15 @@
                                 <div class="form-group">
                                     <label class="text-white">Amount</label>
                                     <input class="form-control" name="atc-amount" id="atc-amount" type="text"
-                                           placeholder="Input amount *" onkeydown="calculateReturn()" onkeyup="calculateReturn()">
+                                        placeholder="Input amount *" onkeydown="calculateReturn()"
+                                        onkeyup="calculateReturn()">
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-1">
                                 <div class="form-group">
                                     <label class="text-white">Rate (in %)</label>
-                                    <input class="form-control" name="atc-amount" id="atc-amount" type="text"
-                                           value="20" disabled>
+                                    <input class="form-control" name="atc-amount" id="atc-amount" type="text" value="20"
+                                        disabled>
                                 </div>
                             </div>
                             <div class="col-lg-12 mb-1">
@@ -771,55 +782,55 @@
                                 </div>
                             </div>
 
-                            
-<!--                            <div class="col-lg-12 mb-2">-->
-<!--                                <h5 class="text-white">Bank Details</h5>-->
-<!--                            </div>-->
-<!--                            <div class="col-lg-6 mb-2">-->
-<!--                                <div class="form-group">-->
-<!--                                    <select class="form-control " id="bank-name" name="bank-name">-->
-<!--                                        <option selected>Choose</option>-->
-<!--                                        <option value="access">Access Bank</option>-->
-<!--                                        <option value="citibank">Citibank</option>-->
-<!--                                        <option value="diamond">Diamond Bank</option>-->
-<!--                                        <option value="ecobank">Ecobank</option>-->
-<!--                                        <option value="fidelity">Fidelity Bank</option>-->
-<!--                                        <option value="firstbank">First Bank</option>-->
-<!--                                        <option value="fcmb">First City Monument Bank (FCMB)</option>-->
-<!--                                        <option value="gtb">Guaranty Trust Bank (GTB)</option>-->
-<!--                                        <option value="heritage">Heritage Bank</option>-->
-<!--                                        <option value="keystone">Keystone Bank</option>-->
-<!--                                        <option value="polaris">Polaris Bank</option>-->
-<!--                                        <option value="providus">Providus Bank</option>-->
-<!--                                        <option value="stanbic">Stanbic IBTC Bank</option>-->
-<!--                                        <option value="standard">Standard Chartered Bank</option>-->
-<!--                                        <option value="sterling">Sterling Bank</option>-->
-<!--                                        <option value="suntrust">Suntrust Bank</option>-->
-<!--                                        <option value="union">Union Bank</option>-->
-<!--                                        <option value="uba">United Bank for Africa (UBA)</option>-->
-<!--                                        <option value="unity">Unity Bank</option>-->
-<!--                                        <option value="wema">Wema Bank</option>-->
-<!--                                        <option value="zenith">Zenith Bank</option>-->
-<!--                                    </select>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="col-lg-6 mb-2">-->
-<!--                                <div class="form-group">-->
-<!--                                    <input class="form-control" name="account_name" id="account_name" type="text"-->
-<!--                                        placeholder="Account Name *">-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="col-lg-12 mb-2">-->
-<!--                                <div class="form-group">-->
-<!--                                    <input class="form-control" name="account_number" id="account_number" type="text"-->
-<!--                                        placeholder="Account Number *">-->
-<!--                                </div>-->
-<!--                            </div>-->
+
+                            <!--                            <div class="col-lg-12 mb-2">-->
+                            <!--                                <h5 class="text-white">Bank Details</h5>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="col-lg-6 mb-2">-->
+                            <!--                                <div class="form-group">-->
+                            <!--                                    <select class="form-control " id="bank-name" name="bank-name">-->
+                            <!--                                        <option selected>Choose</option>-->
+                            <!--                                        <option value="access">Access Bank</option>-->
+                            <!--                                        <option value="citibank">Citibank</option>-->
+                            <!--                                        <option value="diamond">Diamond Bank</option>-->
+                            <!--                                        <option value="ecobank">Ecobank</option>-->
+                            <!--                                        <option value="fidelity">Fidelity Bank</option>-->
+                            <!--                                        <option value="firstbank">First Bank</option>-->
+                            <!--                                        <option value="fcmb">First City Monument Bank (FCMB)</option>-->
+                            <!--                                        <option value="gtb">Guaranty Trust Bank (GTB)</option>-->
+                            <!--                                        <option value="heritage">Heritage Bank</option>-->
+                            <!--                                        <option value="keystone">Keystone Bank</option>-->
+                            <!--                                        <option value="polaris">Polaris Bank</option>-->
+                            <!--                                        <option value="providus">Providus Bank</option>-->
+                            <!--                                        <option value="stanbic">Stanbic IBTC Bank</option>-->
+                            <!--                                        <option value="standard">Standard Chartered Bank</option>-->
+                            <!--                                        <option value="sterling">Sterling Bank</option>-->
+                            <!--                                        <option value="suntrust">Suntrust Bank</option>-->
+                            <!--                                        <option value="union">Union Bank</option>-->
+                            <!--                                        <option value="uba">United Bank for Africa (UBA)</option>-->
+                            <!--                                        <option value="unity">Unity Bank</option>-->
+                            <!--                                        <option value="wema">Wema Bank</option>-->
+                            <!--                                        <option value="zenith">Zenith Bank</option>-->
+                            <!--                                    </select>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="col-lg-6 mb-2">-->
+                            <!--                                <div class="form-group">-->
+                            <!--                                    <input class="form-control" name="account_name" id="account_name" type="text"-->
+                            <!--                                        placeholder="Account Name *">-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
+                            <!--                            <div class="col-lg-12 mb-2">-->
+                            <!--                                <div class="form-group">-->
+                            <!--                                    <input class="form-control" name="account_number" id="account_number" type="text"-->
+                            <!--                                        placeholder="Account Number *">-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
 
                         </div>
                     </div>
                     <div class="card-footer text-center text-white bg-warning" style="cursor: pointer;"
-                         id="airtimeToCashBtn">
+                        id="airtimeToCashBtn">
                         Continue
                     </div>
                 </div>
@@ -827,30 +838,60 @@
             <div class="col-xl-5 col-xxl-4">
                 <div class="card">
                     <div class="card-body" style="background-color: #cfcfcf; border-radius: 15px;">
-                        <div class="row" style="margin-top: 10px; background-color: #fcfcfc99; padding: 10px 5px; border-radius: 15px;">
-                            <div class="col-lg-6 col-md-6 col-sm-6"><h5>YOU ARE SELLING</h5></div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 text-right"><h5>NGN <span class="amtROI">0</span> Airtime</h5></div>
+                        <div class="row"
+                            style="margin-top: 10px; background-color: #fcfcfc99; padding: 10px 5px; border-radius: 15px;">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <h5>YOU ARE SELLING</h5>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 text-right">
+                                <h5>NGN <span class="amtROI">0</span> Airtime</h5>
+                            </div>
                         </div>
-                        <div class="row" style="margin-top: 10px; background-color: #fcfcfc99; padding: 10px 5px; border-radius: 15px;">
-                            <div class="col-lg-6 col-md-6 col-sm-6"><h5>RATE</h5></div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 text-right"><h5>NGN @ 20%</h5></div>
+                        <div class="row"
+                            style="margin-top: 10px; background-color: #fcfcfc99; padding: 10px 5px; border-radius: 15px;">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <h5>RATE</h5>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 text-right">
+                                <h5>NGN @ 20%</h5>
+                            </div>
                         </div>
-                        <div class="row" style="margin-top: 10px; background-color: #fcfcfc99; padding: 10px 5px; border-radius: 15px;">
-                            <div class="col-lg-6 col-md-6 col-sm-6"><h5>YOU GET</h5></div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 text-right"><h5>NGN <span class="roi">0</span></h5></div>
+                        <div class="row"
+                            style="margin-top: 10px; background-color: #fcfcfc99; padding: 10px 5px; border-radius: 15px;">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <h5>YOU GET</h5>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 text-right">
+                                <h5>NGN <span class="roi">0</span></h5>
+                            </div>
                         </div>
                         <hr class="">
-                        <div class="row" style="margin-top: 10px; background-color: #fcfcfc99; padding: 10px 5px; border-radius: 15px;">
-                            <div class="col-lg-12 col-md-12 col-sm-12"><p class="m-0">Payment Method</p></div>
-                            <div class="col-lg-12 col-md-6 col-sm-12 text-left"><h5>Naira</h5></div>
+                        <div class="row"
+                            style="margin-top: 10px; background-color: #fcfcfc99; padding: 10px 5px; border-radius: 15px;">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <p class="m-0">Payment Method</p>
+                            </div>
+                            <div class="col-lg-12 col-md-6 col-sm-12 text-left">
+                                <h5>Naira</h5>
+                            </div>
                         </div>
-                        <div class="row" style="margin-top: 10px; background-color: #fcfcfc99; padding: 10px 5px; border-radius: 15px;">
-                            <div class="col-lg-12 col-md-12 col-sm-12"><p class="m-0">Available</p></div>
-                            <div class="col-lg-12 col-md-6 col-sm-12 text-left"><h5>Instantly</h5></div>
+                        <div class="row"
+                            style="margin-top: 10px; background-color: #fcfcfc99; padding: 10px 5px; border-radius: 15px;">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <p class="m-0">Available</p>
+                            </div>
+                            <div class="col-lg-12 col-md-6 col-sm-12 text-left">
+                                <h5>Instantly</h5>
+                            </div>
                         </div>
-                        <div class="row" style="margin-top: 10px; background-color: #fcfcfc99; padding: 10px 5px; border-radius: 15px;">
-                            <div class="col-lg-12 col-md-12 col-sm-12"><p class="m-0">Purchasing for</p></div>
-                            <div class="col-lg-12 col-md-6 col-sm-12 text-left"><h5>Naira Wallet</h5></div>
+                        <div class="row"
+                            style="margin-top: 10px; background-color: #fcfcfc99; padding: 10px 5px; border-radius: 15px;">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <p class="m-0">Purchasing for</p>
+                            </div>
+                            <div class="col-lg-12 col-md-6 col-sm-12 text-left">
+                                <h5>Naira Wallet</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -914,7 +955,7 @@
                             <div class="col-lg-12 mb-2">
                                 <div class="form-group">
                                     <input class="form-control" name="wf-amount" id="wf-amount" type="text"
-                                        placeholder="Amount to transfer? *">
+                                        placeholder="Amount to fund? *">
                                 </div>
                             </div>
                         </div>
@@ -1062,18 +1103,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php
+                                    <?php
                                     foreach($userList["users"]["data"] as $users) {
                                         ?>
-                                        <tr>
-                                            <td style="font-size: 13px;"><?php echo $users['id']; ?></td>
-                                            <td style="font-size: 13px;"><?php echo ucfirst($users['last_name']).' '.ucfirst($users['first_name']); ?></td>
-                                            <td style="font-size: 13px;"><?php echo $users['phone']; ?></td>
-                                            <td style="font-size: 13px;"><strong><?php echo $users['email']; ?></strong></td>
-                                            <td style="font-size: 13px;"><?php $dat = explode("T", $users['created_at']); echo $dat[0]; ?></td>
-                                            <td style="font-size: 13px;"><?php $dat = explode("T", $users['updated_at']); echo $dat[0]; ?></td>
-                                            <td style="font-size: 13px;"><a href="fund-user.php?user_email=<?php echo $users['email']; ?>" class="btn btn-primary btn-xs">Fund User</a></td>
-                                        </tr>
+                                    <tr>
+                                        <td style="font-size: 13px;"><?php echo $users['id']; ?></td>
+                                        <td style="font-size: 13px;">
+                                            <?php echo ucfirst($users['last_name']).' '.ucfirst($users['first_name']); ?>
+                                        </td>
+                                        <td style="font-size: 13px;"><?php echo $users['phone']; ?></td>
+                                        <td style="font-size: 13px;"><strong><?php echo $users['email']; ?></strong>
+                                        </td>
+                                        <td style="font-size: 13px;">
+                                            <?php $dat = explode("T", $users['created_at']); echo $dat[0]; ?></td>
+                                        <td style="font-size: 13px;">
+                                            <?php $dat = explode("T", $users['updated_at']); echo $dat[0]; ?></td>
+                                        <td style="font-size: 13px;"><a
+                                                href="fund-user.php?user_email=<?php echo $users['email']; ?>"
+                                                class="btn btn-primary btn-xs">Fund User</a></td>
+                                    </tr>
                                     <?php } ?>
                                 </tbody>
                             </table>
@@ -1090,24 +1138,26 @@
                         <div class="table-responsive">
                             <table id="example4" class="display table-responsive-md">
                                 <thead>
-                                <tr>
-                                    <th scope="col" style="font-size: 13px;">#</th>
-                                    <th scope="col" style="font-size: 13px;">Type</th>
-                                    <th scope="col" style="font-size: 13px;">Amount</th>
-                                    <th scope="col" style="font-size: 13px;">Date</th>
-                                </tr>
+                                    <tr>
+                                        <th scope="col" style="font-size: 13px;">#</th>
+                                        <th scope="col" style="font-size: 13px;">Type</th>
+                                        <th scope="col" style="font-size: 13px;">Amount</th>
+                                        <th scope="col" style="font-size: 13px;">Date</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                <?php
+                                    <?php
                                 foreach($userTrans->transactions->data as $trans) {
                                     ?>
                                     <tr>
                                         <td style="font-size: 13px;"><?php echo $trans->id; ?></td>
                                         <td style="font-size: 13px;"><?php echo ucfirst($trans->type); ?></td>
-                                        <td style="font-size: 13px;"><strong>#<?php echo $trans->amount; ?></strong></td>
-                                        <td style="font-size: 13px;"><?php $dat = explode("T", $trans->created_at); echo $dat[0]; ?></td>
+                                        <td style="font-size: 13px;"><strong>#<?php echo $trans->amount; ?></strong>
+                                        </td>
+                                        <td style="font-size: 13px;">
+                                            <?php $dat = explode("T", $trans->created_at); echo $dat[0]; ?></td>
                                     </tr>
-                                <?php } ?>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>

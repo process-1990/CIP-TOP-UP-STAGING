@@ -652,9 +652,9 @@ function payMtn(id) {
 }
 
 function purchaseCable(id) {
+    $("#" + id).html("<small>Please wait...</small>");
+    document.getElementById(id).disabled = true;
     if ($("input[type='radio'][name='cableOption']:checked").val() == "main") {
-        $("#" + id).html("<small>Please wait...</small>");
-        document.getElementById(id).disabled = true;
         if ($("#cable-type").val() == "dstv") {
             if ($("#smartCardNo").val() == "") {
                 $("#" + id).html("Pay");
