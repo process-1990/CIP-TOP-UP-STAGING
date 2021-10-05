@@ -26,12 +26,13 @@
                                     <i class="fas fa-wallet"></i>
                                 </span>
                                 <div class="media-body">
-                                    <p class="mb-1" style="font-size: 11px !important;">Your Account Number</p>
+                                    <p class="mb-1" style="font-size: 10px !important;">Your Account Number</p>
                                     <h6 style="font-size: 12px;"><span>Wema Bank: </span><span
-                                            style="text-align: right; font-Weight: 900; color: red"><?php echo isset($ud->account_number) ? $ud->account_number : "<a onclick='generateAcct()'>[ Generate Account ]</a>"; ?></span>
+                                            style="text-align: right; font-Weight: 800; color: red"><?php echo $ud->account_number ; ?></span>
+                                        <!-- <a onclick='generateAcct()'>[ Generate Account ]</a> -->
                                     </h6>
                                     <h6 style="font-size: 12px;"><span>Rolez Microfinance Bank: </span><span
-                                            style="text-align: right; font-Weight: 900; color: red"><?php echo isset($ud->second_account_number) ? $ud->second_account_number : "Not Generated"; ?></span>
+                                            style="text-align: right; font-Weight: 800; color: red"><?php echo $ud->second_account_number; ?></span>
                                     </h6>
                                 </div>
                             </div>
