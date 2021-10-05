@@ -27,10 +27,10 @@
                                 </span>
                                 <div class="media-body">
                                     <p class="mb-1" style="font-size: 11px !important;">Your Account Number</p>
-                                    <h6 style="display: none;"><span>WEMA BANK: </span><span
+                                    <h6 style="font-size: 12px;"><span>Wema Bank: </span><span
                                             style="text-align: right; font-Weight: 900; color: red"><?php echo isset($ud->account_number) ? $ud->account_number : "<a onclick='generateAcct()'>[ Generate Account ]</a>"; ?></span>
                                     </h6>
-                                    <h6><span>Rolez Microfinance Bank: </span><span
+                                    <h6 style="font-size: 12px;"><span>Rolez Microfinance Bank: </span><span
                                             style="text-align: right; font-Weight: 900; color: red"><?php echo isset($ud->second_account_number) ? $ud->second_account_number : "Not Generated"; ?></span>
                                     </h6>
                                 </div>
