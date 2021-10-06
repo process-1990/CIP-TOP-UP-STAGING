@@ -507,7 +507,7 @@ $(document).ready(function() {
                 if(response.status=="success"){
                     swal("Redirecting...", response.message, 'success');
                     setTimeout(function(){
-                        window.location.href = "Sign-in.php";
+                        window.location.href = "sign-in.php";
                     }, 3000);
                 }else{
                     $('#resetBtn').html('Reset password');

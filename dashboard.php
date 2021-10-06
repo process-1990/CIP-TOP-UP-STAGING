@@ -510,7 +510,7 @@
                                         onchange="typeChecker(this.value);" onselect="typeChecker(this.id);">
                                         <option value="">Select Type</option>
                                         <option value="mtn-gifting">MTN GIFTING</option>
-                                        <option value="mtn">MTN SME</option>
+                                        <!-- <option value="mtn">MTN SME</option> -->
                                     </select>
                                 </div>
                             </div>
@@ -580,11 +580,14 @@
                             <div class="col-lg-12">
                                 <div class="form-group mb-1">
                                     <input class="form-control" name="smartCardNo" id="smartCardNo" type="text"
-                                        placeholder="SmartCard Number" onkeydown="confirmIUC()" onkeyup="confirmIUC();">
+                                        placeholder="SmartCard Number" onkeydown="confirmIUC()" onkeyup="confirmIUC();"
+                                        style="display: none;">
                                     <input class="form-control" name="iucnumber" id="iucnumber" type="text"
-                                        placeholder="IUC Number" onkeydown="confirmIUC()" onkeyup="confirmIUC();">
+                                        placeholder="IUC Number" onkeydown="confirmIUC()" onkeyup="confirmIUC();"
+                                        style="display: none;">
                                     <input class="form-control" name="st-number" id="st-number" type="text"
-                                        placeholder="Startimes Number" onkeydown="confirmST()" onkeyup="confirmST();">
+                                        placeholder="Startimes Number" onkeydown="confirmST()" onkeyup="confirmST();"
+                                        style="display: none;">
                                 </div>
                                 <div class="bootstrap-badge mb-2">
                                     <a href="javascript:void()"
@@ -595,19 +598,21 @@
                             <div class="col-lg-12 mb-2">
                                 <div class="form-group">
                                     <select class="form-control" id="gotv-plan" name="gotv-plan"
-                                        onchange="setGotvPrice();">
+                                        onchange="setGotvPrice();" style="display: none">
                                         <option value="">Select plan</option>
                                     </select>
-                                    <input type="hidden" name="gotv-plan-code" id="gotv-plan-code" />
+                                    <input type="hidden" name="gotv-plan-code" id="gotv-plan-code"
+                                        style="display: none;" />
                                     <select class="form-control" id="dstv-plan" name="dstv-plan"
-                                        onchange="setDstvPrice();">
+                                        onchange="setDstvPrice();" style="display: none">
                                         <option value="">Select plan</option>
                                     </select>
                                     <input type="hidden" name="dstv-plan-code" id="dstv-plan-code" />
-                                    <select class="form-control" id="st-plan" name="st-plan" onchange="setDstvPrice();">
+                                    <select class="form-control" id="st-plan" name="st-plan" onchange="setDstvPrice();"
+                                        style="display: none">
                                         <option value="">Select plan</option>
                                     </select>
-                                    <input type="hidden" name="st-plan-code" id="st-plan-code" />
+                                    <input type="hidden" name="st-plan-code" id="st-plan-code" style="display: none;" />
                                 </div>
                             </div>
                             <div class="col-lg-12 mt-2">

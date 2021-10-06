@@ -202,25 +202,17 @@ function goto(id, title, carrier) {
                 '<img src="public/images/dstv.svg" width="120px" height="auto" style="border-radius: 20px; box-shadow: 2px 1px 1px 2px #ece4e4;" />'
             );
             $("#smartCardNo").fadeIn(800);
-            $("#iucnumber").hide();
-            $("#gotv-plan").hide();
             $("#dstv-plan").fadeIn(800);
         } else if (carrier == "gotv") {
             $("#cable-logo").html(
                 '<img src="public/images/gotv.svg" width="120px" height="auto" style="border-radius: 20px; box-shadow: 2px 1px 1px 2px #ece4e4;" />'
             );
-            $("#smartCardNo").hide();
             $("#iucnumber").fadeIn(800);
             $("#gotv-plan").fadeIn(800);
-            $("#dstv-plan").hide();
         } else if (carrier == "startimes") {
             $("#cable-logo").html(
                 '<img src="public/images/startimes.svg" width="120px" height="auto" style="border-radius: 20px; box-shadow: 2px 1px 1px 2px #ece4e4;" />'
             );
-            $("#smartCardNo").hide();
-            $("#iucnumber").hide();
-            $("#gotv-plan").hide();
-            $("#dstv-plan").hide();
             $("#st-number").fadeIn(800);
             $("#st-plan").fadeIn(800);
         }
@@ -353,6 +345,12 @@ function goHome() {
     $("#wallet-funding").hide();
     $("#bundle-ntel").hide();
     $("#bundle-smile").hide();
+    $("#smartCardNo").hide();
+    $("#dstv-plan").hide();
+    $("#iucnumber").hide();
+    $("#gotv-plan").hide();
+    $("#st-number").hide();
+    $("#st-plan").hide();
 }
 
 

@@ -186,7 +186,7 @@
 
                 <div class="pricing-plans lg:flex lg:-mx-5 mt-6 md:mt-8">
 
-                    <div class="pricing-plan-wrap lg:w-1/5 my-5 md:my-6 mr-2">
+                    <div class="pricing-plan-wrap lg:w-1/4 my-4 md:my-4 mr-2">
                         <div class="pricing-plan border-t-4 border-solid border-white bg-white text-center max-w-sm mx-auto hover:border-indigo-600 transition-colors duration-300border-r-2"
                             style="background-color: #face33 !important; height: 650px;">
                             <div class="py-4 md:py-8">
@@ -239,7 +239,7 @@
                         </div>
                     </div>
 
-                    <div class="pricing-plan-wrap lg:w-1/5 my-5 md:my-6 mr-2">
+                    <div class="pricing-plan-wrap lg:w-1/5 my-5 md:my-6 mr-2" style="display: none !important;">
                         <div class="pricing-plan border-t-4 border-solid border-white bg-white text-center max-w-sm mx-auto hover:border-indigo-600 transition-colors duration-300border-r-2"
                             style="background-color: #face33 !important; height: 650px;">
                             <div class="py-4 md:py-8">
@@ -280,7 +280,7 @@
                         </div>
                     </div>
 
-                    <div class="pricing-plan-wrap lg:w-1/5 my-5 md:my-6 mr-2">
+                    <div class="pricing-plan-wrap lg:w-1/4 my-4 md:my-4 mr-2">
                         <div class="pricing-plan border-t-4 border-solid border-white bg-white text-center max-w-sm mx-auto hover:border-indigo-600 transition-colors duration-300 border-r-1"
                             style="background-color: #5bb000 !important; height: 650px;">
                             <div class="py-4 md:py-8">
@@ -323,7 +323,7 @@
                         </div>
                     </div>
 
-                    <div class="pricing-plan-wrap lg:w-1/5 my-5 md:my-6 mr-2">
+                    <div class="pricing-plan-wrap lg:w-1/4 my-4 md:my-4 mr-2">
                         <div class="pricing-plan border-t-4 border-solid border-white bg-white text-center max-w-sm mx-auto hover:border-indigo-600 transition-colors duration-300 border-r-1"
                             style="background-color: #e93f33 !important; height: 650px;">
                             <div class="py-4 md:py-8">
@@ -364,7 +364,7 @@
                         </div>
                     </div>
 
-                    <div class="pricing-plan-wrap lg:w-1/5 my-5 md:my-6 mr-2">
+                    <div class="pricing-plan-wrap lg:w-1/4 my-4 md:my-4 mr-2">
                         <div class="pricing-plan border-t-4 border-solid border-white bg-white text-center max-w-sm mx-auto hover:border-indigo-600 transition-colors duration-300 border-r-1"
                             style="background-color: #102111 !important; height: 650px;">
                             <div class="py-4 md:py-8">
