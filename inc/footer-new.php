@@ -117,6 +117,129 @@ function powerPurchaseCalculator(id) {
 
 }
 $(document).ready(function() {
+    $("#buy-airtime-form").on("submit", function(e) {
+        e.preventDefault();
+        let id = "buyAirtimeBtn";
+        $("#" + id).html("<small>Please wait...</small>");
+        document.getElementById(id).disabled = true;
+        if ($("#airtime_phone_number").val() == "") {
+            $("#" + id).html('Pay');
+            document.getElementById(id).disabled = false;
+            // swal("Oops!", "Select a network carrier!", "error");
+            toastr.warning("Oops!", "Select a network carrier!", {
+                timeOut: 10000
+            });
+            return;
+        }
+        if ($("input[type='radio'][name='payOption']:checked").val() == "main") {
+            var payment = '';
+        } else if ($("input[type='radio'][name='payOption']:checked").val() == "bonus") {
+            var payment = "bonus";
+        }
+        $.ajax({
+            type: "POST",
+            url: "consumer/methods/airtime-topup.php",
+            dataType: 'json',
+            data: {
+                "amount": $('#amount').val(),
+                "network": $('#carrier').val(),
+                "phone_number": $('#airtime_phone_number').val(),
+                "payment": payment,
+            },
+            success: function(response) {
+                console.log(response.status);
+                if (response.status == "success") {
+                    // swal("Success!", response.message, 'success');
+                    toastr.success('Successful', 'Thanks for using CIP Topup', {
+                        timeOut: 15000
+                    });
+                    setTimeout(function() {
+                        window.location.href = "dashboard.php";
+                    }, 5000);
+                } else if (response.status === "failed") {
+                    $('#' + id).html('Buy');
+                    document.getElementById(id).disabled = false;
+                    // swal("Success!", response.message, 'error');
+                    toastr.error(response.message, "Failed!", {
+                        timeOut: 15000
+                    });
+                } else {
+                    $('#' + id).html('Buy');
+                    document.getElementById(id).disabled = false;
+                    let p = response.errors;
+                    for (var key in p) {
+                        toastr.success(p[key], "Error:", {
+                            timeOut: 10000
+                        });
+                        swal("Opps!", p[key], 'error');
+                    }
+                }
+            }
+        });
+    });
+    $("#buy-data-form").on("submit", function(e) {
+        e.preventDefault();
+        let id = "buyDataBtn";
+        $("#" + id).html("<small>Please wait...</small>");
+        document.getElementById(id).disabled = true;
+        if ($("#data_phone_number").val() == "") {
+            $("#" + id).html('Pay');
+            document.getElementById(id).disabled = false;
+            // swal("Oops!", "Select a network carrier!", "error");
+            toastr.warning("Oops!", "Select a network carrier!", {
+                timeOut: 10000
+            });
+            return;
+        }
+        if ($("input[type='radio'][name='payOption']:checked").val() == "main") {
+            var payment = '';
+        } else if ($("input[type='radio'][name='payOption']:checked").val() == "bonus") {
+            var payment = "bonus";
+        }
+        $.ajax({
+            type: "POST",
+            url: "consumer/methods/data-purchase.php",
+            dataType: 'json',
+            data: {
+                "phone_number": $('#data_phone_number').val(),
+                "bundle": $('#data-plan').val(),
+                "network": $('#carrier').val(),
+                "web_hook_url": "https://env288793hwk.x.pipedream.net/",
+                "payment": payment
+            },
+            success: function(response) {
+                console.log(response.status);
+                // return
+                $("#" + id).html("Please wait...");
+                if (response.status == "success") {
+                    // swal("Success!", response.message, 'success');
+                    toastr.success('Thanks for using CIP Topup', 'Successful', {
+                        timeOut: 15000
+                    });
+                    setTimeout(function() {
+                        window.location.href = "dashboard.php";
+                    }, 5000);
+                } else if (response.status === "failed") {
+                    $('#' + id).html('Buy');
+                    document.getElementById(id).disabled = false;
+                    // swal("Success!", response.message, 'error');
+                    toastr.error(response.message, "Failed!", {
+                        timeOut: 15000
+                    });
+                } else {
+                    $('#' + id).html('Buy');
+                    document.getElementById(id).disabled = false;
+                    let p = response.errors;
+                    for (var key in p) {
+                        toastr.success(p[key], "Error:", {
+                            timeOut: 10000
+                        });
+                        swal("Opps!", p[key], 'error');
+                    }
+                }
+            }
+        });
+    });
     $("#airtimeToCashBtn").click(function() {
         if ($("#atc-phonenumber").val() === "" || $("#atc-carrier").val() === "" || $("#atc-amount")
             .val() === "") {
@@ -140,9 +263,11 @@ $(document).ready(function() {
             $("#airtime-to-cash-modal").modal("show");
         }
     });
+
     $("#provider").hide();
-    $("#airtime-data").hide();
-    $("#amount").hide();
+    $("#buy-airtime-form").hide();
+    $("#buy-data-form").hide();
+    // $("#amount").hide();
     $("#data-plan").hide();
     $("#cable-form").hide();
     $("#smartCardNo").hide();
@@ -156,12 +281,12 @@ $(document).ready(function() {
     $("#airtime-to-cash").hide();
     $("#wallet-to-wallet").hide();
     $("#wallet-funding").hide();
-    $("#data-type").hide();
+    // $("#data-type").hide();
     $("#data-other").hide();
     $("#data-type-lyt").hide();
     $("#data-plan-lyt").hide();
     $("#data-other-lyt").hide();
-    $("#amount-lyt").hide();
+    // $("#amount-lyt").hide();
     // toastr.info('Check your internet...')
 });
 
@@ -170,25 +295,51 @@ function goto(id, title, carrier) {
     $("#slider").hide();
     $("#tabs").hide();
 
-    if (id === "airtime-data") {
+    if (id === "buy-data-form") {
         if (carrier == "MTN") {
-            $("#provider-logo").html(
+            $(".provider-logo").html(
                 '<img src="public/images/mtn.svg" width="120px" height="auto" style="border-radius: 20px; box-shadow: 2px 1px 1px 2px #ece4e4;" />'
             );
             $("#identifier").val('mtn');
         } else if (carrier == "Glo") {
-            $("#provider-logo").html(
+            $(".provider-logo").html(
                 '<img src="public/images/glo.svg" width="120px" height="auto" style="border-radius: 20px; box-shadow: 2px 1px 1px 2px #ece4e4;" />'
             );
 
             $("#identifier").val('glo');
         } else if (carrier == "Airtel") {
-            $("#provider-logo").html(
+            $(".provider-logo").html(
                 '<img src="public/images/airtel.svg" width="120px" height="auto" style="border-radius: 20px; box-shadow: 2px 1px 1px 2px #ece4e4;" />'
             );
             $("#identifier").val('airtel');
         } else if (carrier == "9mobile") {
-            $("#provider-logo").html(
+            $(".provider-logo").html(
+                '<img src="public/images/9mobile.png" width="120px" height="auto" style="border-radius: 20px; box-shadow: 2px 1px 1px 2px #ece4e4;" />'
+            );
+            $("#identifier").val('9mobile');
+        }
+        $(".trans_id").html(title);
+        $("#carrier").val(carrier);
+        $("#" + id).fadeIn(1000);
+    } else if (id === "buy-airtime-form") {
+        if (carrier == "MTN") {
+            $(".provider-logo").html(
+                '<img src="public/images/mtn.svg" width="120px" height="auto" style="border-radius: 20px; box-shadow: 2px 1px 1px 2px #ece4e4;" />'
+            );
+            $("#identifier").val('mtn');
+        } else if (carrier == "Glo") {
+            $(".provider-logo").html(
+                '<img src="public/images/glo.svg" width="120px" height="auto" style="border-radius: 20px; box-shadow: 2px 1px 1px 2px #ece4e4;" />'
+            );
+
+            $("#identifier").val('glo');
+        } else if (carrier == "Airtel") {
+            $(".provider-logo").html(
+                '<img src="public/images/airtel.svg" width="120px" height="auto" style="border-radius: 20px; box-shadow: 2px 1px 1px 2px #ece4e4;" />'
+            );
+            $("#identifier").val('airtel');
+        } else if (carrier == "9mobile") {
+            $(".provider-logo").html(
                 '<img src="public/images/9mobile.png" width="120px" height="auto" style="border-radius: 20px; box-shadow: 2px 1px 1px 2px #ece4e4;" />'
             );
             $("#identifier").val('9mobile');
@@ -277,7 +428,8 @@ function goto(id, title, carrier) {
     } else if (id === "wallet-funding") {
         $(".trans_id").html(title)
         $("#provider").hide();
-        $("#airtime-data").hide();
+        $("#buy-airtime-form").hide();
+        $("#buy-data-form").hide();
         $("#cable-form").hide();
         $("#power-form").hide();
         $("#airtime-data-confirm").hide();
@@ -334,7 +486,8 @@ function goHome() {
     $("#shortcut").fadeIn(800);
     $("#slider").fadeIn(1000);
     $("#tabs").fadeIn(1200);
-    $("#airtime-data").hide(800);
+    $("#buy-airtime-form").hide(800);
+    $("#buy-data-form").hide(800);
     $("#cable-form").hide();
     $("#power-form").hide();
     $("#power-confirm").hide();
@@ -386,31 +539,31 @@ function generateAcct() {
     });
 }
 
-function typeChecker2(id) {
-    if ($("#" + id).val() == 'Internet' && $("#identifier").val() == "mtn") {
-        $("#data-type").show();
-        $("#data-type-lyt").show();
-        $("#data-other").hide();
-        $("#data-other-lyt").hide();
-        $("#amount").hide();
-        $("#amount-lyt").hide();
-    } else if ($("#" + id).val() == 'Internet' && $("#identifier").val() != "mtn") {
-        $("#data-other").show();
-        $("#data-other-lyt").show();
-        $("#data-type").hide();
-        $("#amount").hide();
-        $("#data-type-lyt").hide();
-        $("#amount-lyt").hide();
-        typeChecker($("#identifier").val());
-    } else if ($("#" + id).val() == 'Airtime') {
-        $("#data-type").hide();
-        $("#data-other").hide();
-        $("#data-type-lyt").hide();
-        $("#data-other-lyt").hide();
-        $("#amount").show();
-        $("#amount-lyt").show();
-    }
-}
+// function typeChecker2(id) {
+//     if ($("#" + id).val() == 'Internet' && $("#identifier").val() == "mtn") {
+//         $("#data-type").show();
+//         $("#data-type-lyt").show();
+//         $("#data-other").hide();
+//         $("#data-other-lyt").hide();
+//         $("#amount").hide();
+//         $("#amount-lyt").hide();
+//     } else if ($("#" + id).val() == 'Internet' && $("#identifier").val() != "mtn") {
+//         $("#data-other").show();
+//         $("#data-other-lyt").show();
+//         $("#data-type").hide();
+//         $("#amount").hide();
+//         $("#data-type-lyt").hide();
+//         $("#amount-lyt").hide();
+//         typeChecker($("#identifier").val());
+//     } else if ($("#" + id).val() == 'Airtime') {
+//         $("#data-type").hide();
+//         $("#data-other").hide();
+//         $("#data-type-lyt").hide();
+//         $("#data-other-lyt").hide();
+//         $("#amount").show();
+//         $("#amount-lyt").show();
+//     }
+// }
 
 
 
@@ -560,94 +713,6 @@ function setDstvPrice() {
     $('#dstv-plan-code').val(value[1]);
 }
 
-function payMtn(id) {
-    $("#" + id).html("<small>Please wait...</small>");
-    document.getElementById(id).disabled = true;
-    if ($("#phone_number").val() == "") {
-        $("#" + id).html('Pay');
-        document.getElementById(id).disabled = false;
-        // swal("Oops!", "Select a network carrier!", "error");
-        toastr.warning("Oops!", "Select a network carrier!", {
-            timeOut: 10000
-        });
-        return;
-    }
-    if ($("input[type='radio'][name='payOption']:checked").val() == "main") {
-        var payment = '';
-    } else if ($("input[type='radio'][name='payOption']:checked").val() == "bonus") {
-        var payment = "bonus";
-    }
-    if ($("#type").val() == "Airtime") {
-        $.ajax({
-            type: "POST",
-            url: "consumer/methods/airtime-topup.php",
-            dataType: 'json',
-            data: {
-                "amount": $('#amount').val(),
-                "network": $('#carrier').val(),
-                "phone_number": $('#phone_number').val(),
-                "payment": payment,
-            },
-            success: function(response) {
-                console.log(response);
-                if (response.status == 'success') {
-                    swal("Success!", response.data.description, 'success');
-                    toastr.success('Success', "Thanks for choosing CIP Topup.", {
-                        timeOut: 15000
-                    });
-                    setTimeout(function() {
-                        window.location.href = "dashboard.php";
-                    }, 5000);
-                } else {
-                    $('#' + id).html('Pay');
-                    toastr.success('Oops!', response.message, {
-                        timeOut: 10000
-                    });
-                    // swal("Opps!", response.message, 'error');
-                    // setTimeout(function(){
-                    //     window.location.href = "dashboard.php";
-                    // }, 5000);
-                }
-            }
-        });
-    } else if ($("#type").val() == "Internet") {
-        $.ajax({
-            type: "POST",
-            url: "consumer/methods/data-purchase.php",
-            dataType: 'json',
-            data: {
-                "phone_number": $('#phone_number').val(),
-                "bundle": $('#data-plan').val(),
-                "network": "MTN",
-                "web_hook_url": "https://env288793hwk.x.pipedream.net/",
-                "payment": payment
-            },
-            success: function(response) {
-                console.log(response);
-                $("#" + id).html("Please wait...");
-                if (response.message == 'Transaction successful') {
-                    swal("Success!", response.message, 'success');
-                    toastr.success('Successful', 'Thanks for using CIP Topup', {
-                        timeOut: 15000
-                    });
-                    setTimeout(function() {
-                        window.location.href = "dashboard.php";
-                    }, 5000);
-                } else {
-                    $('#' + id).html('Pay');
-                    let p = data.errors;
-                    for (var key in p) {
-                        toastr.success(p[key], "Error:", {
-                            timeOut: 10000
-                        });
-                        swal("Opps!", p[key], 'error');
-                    }
-                }
-            }
-        });
-    }
-
-}
 
 function purchaseCable(id) {
     $("#" + id).html("<small>Please wait...</small>");
@@ -920,7 +985,8 @@ function purchasePower(id) {
                         timeOut: 15000
                     });
                     $("#provider").hide();
-                    $("#airtime-data").hide();
+                    $("#buy-airtime-form").hide();
+                    $("#buy-data-form").hide();
                     $("#amount").hide();
                     $("#data-plan").hide();
                     $("#cable-form").hide();

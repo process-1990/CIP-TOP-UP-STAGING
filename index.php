@@ -219,16 +219,16 @@
                                     </li>
                                     <li class="row">
                                         <div class="col-lg-6 col-sm-6">5GB</div>
-                                        <div class="col-lg-6 col-sm-6">N1470</div>
+                                        <div class="col-lg-6 col-sm-6">N1,470</div>
                                     </li>
-                                    <!-- <li class="row">
+                                    <li class="row">
                                         <div class="col-lg-6 col-sm-6">10GB</div>
-                                        <div class="col-lg-6 col-sm-6">N2800</div>
+                                        <div class="col-lg-6 col-sm-6">N2,800</div>
                                     </li>
                                     <li class="row">
                                         <div class="col-lg-6 col-sm-6">15GB</div>
-                                        <div class="col-lg-6 col-sm-6">N3900</div>
-                                    </li> -->
+                                        <div class="col-lg-6 col-sm-6">N3,900</div>
+                                    </li>
                                     <div class="pricing-button">
                                         <a href="dashboard.php"
                                             class="bg-secondary text-1xl text-white py-1 px-2 rounded hover:bg-indigo-700 transition-colors duration-300">Buy

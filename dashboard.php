@@ -19,14 +19,15 @@
         <div class="row">
             <div class="col-xl-6 col-xxl-6 col-lg-6">
                 <div class="widget-stat card" style="height: 80px;">
-                    <div class="row card-body py-3">
+                    <div class="row card-body py-2">
                         <div class="col-xl-8">
                             <div class="media ai-icon">
                                 <span class="mr-3 bgl-danger text-danger">
                                     <i class="fas fa-wallet"></i>
                                 </span>
                                 <div class="media-body">
-                                    <p class="mb-1" style="font-size: 10px !important;">Your Account Number</p>
+                                    <p class="mb-1" style="font-size: 13px !important; font-weight: bold;">Your Account
+                                        Number</p>
                                     <h6 style="font-size: 12px;"><span>Wema Bank: </span><span
                                             style="text-align: right; font-Weight: 800; color: red"><?php echo $ud->account_number ; ?></span>
                                         <!-- <a onclick='generateAcct()'>[ Generate Account ]</a> -->
@@ -94,7 +95,7 @@
                 </div>
             </div>
             <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6">
-                <div class="widget-stat card" onclick="goto('airtime-data', 'Provider MTN', 'MTN')"
+                <div class="widget-stat card" onclick="goto('buy-data-form', 'Provider MTN', 'MTN')"
                     style="background-color: #face33;">
                     <div class="card-body p-0">
                         <img src="public/images/mtn.png" width="100%" height="100%" class="custom-img" />
@@ -102,14 +103,14 @@
                 </div>
             </div>
             <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6">
-                <div class="widget-stat card" onclick="goto('airtime-data', 'Provider Glo', 'Glo');">
+                <div class="widget-stat card" onclick="goto('buy-data-form', 'Provider Glo', 'Glo');">
                     <div class="card-body p-0">
                         <img src="public/images/glo.png" width="100%" height="100%" class="custom-img" />
                     </div>
                 </div>
             </div>
             <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6">
-                <div class="widget-stat card" onclick="goto('airtime-data', 'Provider Airtel', 'Airtel');"
+                <div class="widget-stat card" onclick="goto('buy-data-form', 'Provider Airtel', 'Airtel');"
                     style="background-color: #e93f33;">
                     <div class="card-body p-0">
                         <img src="public/images/airtel.png" width="100%" height="100%" class="custom-img" />
@@ -201,9 +202,9 @@
                         <div class="tab-content">
                             <div id="navpills-1" class="tab-pane active">
                                 <div class="row">
-                                    <!-- <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6">
+                                    <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">
                                         <div class="widget-stat card"
-                                            onclick="goto('airtime-data', 'Provider MTN', 'MTN')"
+                                            onclick="goto('buy-data-form', 'Provider MTN', 'MTN')"
                                             style="background-color: #face33;">
                                             <div class="card-body p-0">
                                                 <img src="public/images/mtn.png" width="100%" height="100%"
@@ -211,18 +212,28 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6">
+                                    <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">
                                         <div class="widget-stat card"
-                                            onclick="goto('airtime-data', 'Provider Glo', 'Glo')">
+                                            onclick="goto('buy-data-form', 'Provider Glo', 'Glo')">
                                             <div class="card-body p-0">
                                                 <img src="public/images/glo.png" width="100%" height="100%"
                                                     class="custom-img" />
                                             </div>
                                         </div>
-                                    </div> -->
+                                    </div>
+                                    <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">
+                                        <div class="widget-stat card"
+                                            onclick="goto('buy-data-form', 'Provider Airtel', 'Airtel')"
+                                            style="background-color: #e93f33;">
+                                            <div class="card-body p-0">
+                                                <img src="public/images/airtel.png" width="100%" height="100%"
+                                                    class="custom-img" />
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6">
                                         <div class="widget-stat card"
-                                            onclick="goto('airtime-data', 'Provider 9Mobile', '9mobile')"
+                                            onclick="goto('buy-data-form', 'Provider 9Mobile', '9mobile')"
                                             style="background-color: #e93f33;">
                                             <div class="card-body p-0">
                                                 <img src="public/images/9mobile.png" width="100%" height="100%"
@@ -231,8 +242,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">
-                                        <div class="widget-stat card"
-                                            onclick="goto('bundle-ntel', 'Provider Ntel', 'Ntel')"
+                                        <div class="widget-stat card" onclick="goto('ntel', 'Provider Ntel', 'Ntel')"
                                             style="background-color: #e93f33;">
                                             <div class="card-body p-0">
                                                 <img src="public/images/ntel.png" width="100%" height="100%"
@@ -241,8 +251,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">
-                                        <div class="widget-stat card"
-                                            onclick="goto('bundle-smile', 'Provider Smile', 'Smile')"
+                                        <div class="widget-stat card" onclick="goto('smile', 'Provider Smile', 'Smile')"
                                             style="background-color: #e93f33;">
                                             <div class="card-body p-0">
                                                 <img src="public/images/smile.png" width="100%" height="100%"
@@ -256,7 +265,7 @@
                                 <div class="row">
                                     <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">
                                         <div class="widget-stat card"
-                                            onclick="goto('airtime-data', 'Provider MTN', 'MTN')"
+                                            onclick="goto('buy-airtime-form', 'Provider MTN', 'MTN')"
                                             style="background-color: #face33;">
                                             <div class="card-body p-0">
                                                 <img src="public/images/mtn.png" width="100%" height="100%"
@@ -266,7 +275,7 @@
                                     </div>
                                     <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">
                                         <div class="widget-stat card"
-                                            onclick="goto('airtime-data', 'Provider Glo', 'Glo')">
+                                            onclick="goto('buy-airtime-form', 'Provider Glo', 'Glo')">
                                             <div class="card-body p-0">
                                                 <img src="public/images/glo.png" width="100%" height="100%"
                                                     class="custom-img" />
@@ -275,7 +284,7 @@
                                     </div>
                                     <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">
                                         <div class="widget-stat card"
-                                            onclick="goto('airtime-data', 'Provider Airtel', 'Airtel')"
+                                            onclick="goto('buy-airtime-form', 'Provider Airtel', 'Airtel')"
                                             style="background-color: #e93f33;">
                                             <div class="card-body p-0">
                                                 <img src="public/images/airtel.png" width="100%" height="100%"
@@ -470,8 +479,7 @@
             </div>
         </div>
 
-
-        <div class="row mt-3" id="airtime-data">
+        <form id="buy-data-form" class="row mt-3">
             <div class="col-xl-6 col-xxl-6 offset-3">
                 <div class="card" style="background-color: #40189D">
                     <div class="row card-header text-left">
@@ -483,28 +491,18 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-12 text-center justify-content-center align-content-middle pb-3">
-                                <span id="provider-logo"></span>
+                                <span class="provider-logo"></span>
                                 <h5 class="text-white mt-3">Please provide details:</h5>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input class="form-control" name="phone_number" id="phone_number" type="text"
-                                        placeholder="Mobile number *">
+                                    <input class="form-control" name="data_phone_number" id="data_phone_number"
+                                        type="text" placeholder="Mobile number *">
                                     <input type="hidden" class="form-control" name="identifier" id="identifier"
                                         type="text">
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <select class="form-control" id="type" name="type" onchange="typeChecker2(this.id);"
-                                        onselect="typeChecker2(this.id);">
-                                        <option value="">- Choose -</option>
-                                        <option value="Airtime">Airtime</option>
-                                        <option value="Internet">Data</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mb-2" id="data-type-lyt">
+                            <div class="col-lg-6 mb-2">
                                 <div class="form-group">
                                     <select class="form-control" id="data-type" name="data-type"
                                         onchange="typeChecker(this.value);" onselect="typeChecker(this.id);">
@@ -514,7 +512,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-lg-6 mb-2" id="data-plan-lyt">
+                            <div class="col-lg-12 mb-2" id="data-plan-lyt">
                                 <div class="form-group">
                                     <select class="form-control" id="data-plan" name="data-plan">
                                         <option value="">Select plan</option>
@@ -528,7 +526,58 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-lg-12 mb-2" id="amount-lyt">
+                            <div class="col-lg-12 mt-2">
+                                <input class="form-control" name="carrier" id="carrier" type="hidden">
+                                <div class="row form-group mb-0">
+                                    <div class="col-lg-4">
+                                        <h6 class="text-white">Recharge from:</h6>
+                                    </div>
+                                    <div class="col-lg-8 form-group form-inline">
+                                        <label class="radio-inline mr-2 text-white" style="font-size: 13px;"><input
+                                                type="radio" name="payOption" id="payOption" value="main" class="mr-1"
+                                                checked style="height:15px; width:15px; vertical-align: middle;"> Main
+                                            Account</label>
+                                        <label class="radio-inline mr-1 text-white" style="font-size: 13px;"><input
+                                                type="radio" name="payOption" id="payOption" value="bonus" class="mr-1"
+                                                style="height:15px; width:15px; vertical-align: middle;"> Bonus
+                                            Account</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="card-footer text-center text-white bg-warning" style="cursor: pointer;"
+                        id="buyDataBtn">
+                        Buy
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <form class="row mt-3" id="buy-airtime-form">
+            <div class="col-xl-6 col-xxl-6 offset-3">
+                <div class="card" style="background-color: #40189D">
+                    <div class="row card-header text-left">
+                        <div class="col-1"><i class="fas fa-angle-left text-white p-2" onclick="goHome();"></i></div>
+                        <div class="col-11">
+                            <h4 class="card-title text-white trans_id">Provider MTN</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-12 text-center justify-content-center align-content-middle pb-3">
+                                <span class="provider-logo"></span>
+                                <h5 class="text-white mt-3">Please provide details:</h5>
+                            </div>
+                            <div class="col-lg-6 mb-2">
+                                <div class="form-group">
+                                    <input class="form-control" name="airtime_phone_number" id="airtime_phone_number"
+                                        type="text" placeholder="Mobile number *">
+                                    <input type="hidden" class="form-control" name="identifier" id="identifier"
+                                        type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-2" id="amount-lyt">
                                 <div class="form-group">
                                     <input class="form-control" name="amount" id="amount" type="text"
                                         placeholder="Amount *">
@@ -554,13 +603,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer text-center text-white bg-warning" style="cursor: pointer;" id="payMtnBtn"
-                        onclick="payMtn(this.id);">
-                        Pay
-                    </div>
+                    <button class="card-footer text-center text-white bg-warning" style="cursor: pointer;"
+                        id="buyAirtimeBtn">
+                        Buy
+                    </button>
                 </div>
             </div>
-        </div>
+        </form>
 
         <div class="row mt-3" id="cable-form">
             <div class="col-xl-6 col-xxl-6 offset-3">
