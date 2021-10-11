@@ -254,7 +254,8 @@ $(document).ready(function() {
                 $(".network-code").html("737");
                 $(".send-to").html("Not available");
             } else if ($("#atc-carrier").val() === "Airtel") {
-                $(".network-code").html("432");
+                // (*432*1*09047618552*Amount*pin#)
+                $(".network-code").html("432*1");
                 $(".send-to").html("09047618552");
             } else if ($("#atc-carrier").val() === "9Mobile") {
                 $(".network-code").html("223");
