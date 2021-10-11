@@ -66,6 +66,14 @@
                 <div class="contact-inner text-left pt-2">
                     <p>Don't have an account? <a href="sign-up.php"><b>Sign Up</b></a></p>
                 </div>
+                <div class="row col-12">
+                    <small
+                        style="background-color: #cfcfcf; padding: 15px; border: solid 1px #3c3c3c; border-radius: 12px;">For
+                        Existing users, if this is your first time on this new platform, kindly use the password
+                        reset link to set a new password, after that a password reset link would be sent to your
+                        mail(INBOX/SPAM FOLDER). click on it to set a new password then login with your new
+                        credentials</small>
+                </div>
 
             </div>
         </div>

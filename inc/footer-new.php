@@ -655,7 +655,7 @@ function confirmIUC() {
                     document.getElementById("dstv-plan").appendChild(optionObj);
                     $("#dstv-plan-code").val(item.code);
                 } else if ($("#cable-type").val() == "gotv") {
-                    document.getElementById("dstv-plan").appendChild(optionObj);
+                    document.getElementById("gotv-plan").appendChild(optionObj);
                     $("#gotv-plan-code").val(item.code);
                 }
 
