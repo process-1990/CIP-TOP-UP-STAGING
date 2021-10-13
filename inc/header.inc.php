@@ -3,7 +3,7 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 require_once("consumer/controller.php");
-if(isset($_COOKIE["access_token"])){
+if(isset($_COOKIE["access_token"]) || !empty($_COOKIE["access_token"]) || isset($_COOKIE["user_role"]) || !empty($_COOKIE["user_role"])){
     $url = "https://api.ciptopup.ng/api/auth/user-profile";
     $url2 = "https://api.ciptopup.ng/api/auth/logout";
     $classer = new CurlHelper();
@@ -520,18 +520,19 @@ if(isset($_COOKIE["access_token"])){
                             <div class="header-right-box">
                                 <div class="header-right-inner" id="hidden-icon-wrapper">
                                     <?php
-                                if(isset($_SESSION["access_token"]) ) {
+                                if(isset($_COOKIE["access_token"]) || !empty($_COOKIE["access_token"]) || isset($_COOKIE["user_role"]) || !empty($_COOKIE["user_role"])) {
                                     ?>
                                     <div class="language-menu">
                                         <ul>
-                                            <li>
-                                                <a href="#" class="">
-                                                    <img class="ls-flag" src="assets/images/team/admin.jpg" alt="en"
-                                                        title="English"
-                                                        style="width: 40px; height: 40px; border-radius: 50%;">
-                                                    <span class="wpml-ls-native">Hi,
-                                                        <?php  echo isset($ud->first_name) ? ucfirst($ud->first_name) : ""; ?></span>
-                                                </a>
+                                            <li style="align-items: center; display: flex; cursor: pointer;">
+                                                <!-- <a href="#" class=""> -->
+                                                <img class="ls-flag" src="assets/images/team/admin.jpg" alt="en"
+                                                    title="English"
+                                                    style="width: 40px; height: 40px; border-radius: 50%;">
+                                                <span class="wpml-ls-native"
+                                                    style="font-size: 13px; font-weight: 600; padding-left: 5px;">Hi,
+                                                    <?php  echo isset($ud->first_name) ? ucfirst($ud->first_name) : ""; ?></span>
+                                                <!-- </a> -->
                                                 <ul class="ls-sub-menu">
                                                     <li class="">
                                                         <a href="dashboard.php" class="">

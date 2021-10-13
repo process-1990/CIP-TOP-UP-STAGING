@@ -18,27 +18,25 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-6 col-xxl-6 col-lg-6">
-                <div class="widget-stat card" style="height: 80px;">
-                    <div class="row card-body py-2">
-                        <div class="col-xl-8">
-                            <div class="media ai-icon">
-                                <span class="mr-3 bgl-danger text-danger">
-                                    <i class="fas fa-wallet"></i>
-                                </span>
-                                <div class="media-body">
-                                    <p class="mb-1" style="font-size: 13px !important; font-weight: bold;">Your Account
-                                        Number</p>
-                                    <h6 style="font-size: 12px;"><span>Wema Bank: </span><span
-                                            style="text-align: right; font-Weight: 800; color: red"><?php echo $ud->account_number ; ?></span>
-                                        <!-- <a onclick='generateAcct()'>[ Generate Account ]</a> -->
-                                    </h6>
-                                    <h6 style="font-size: 12px;"><span>Rolez Microfinance Bank: </span><span
-                                            style="text-align: right; font-Weight: 800; color: red"><?php echo $ud->second_account_number; ?></span>
-                                    </h6>
+                <div class="widget-stat card" style="display: flex; justify-content: center; padding: 15px;">
+                    <div class="row">
+                        <div class="col-md-2 text-danger  justify-content-center align-content-center"
+                            style="display: flex;">
+                            <i class="fas fa-wallet fa-2x"></i>
+                        </div>
+                        <div class="col-md-8  justify-content-center align-content-center">
+                            <div class="row media ai-icon">
+                                <div class="col-md-9 media-body">
+                                    <div style="font-size: 13px;">Wema Bank:
+                                        <strong class="text-red"><?php echo $ud->account_number ; ?></strong>
+                                    </div>
+                                    <div style="font-size: 13px;">Rolez Microfinance Bank:
+                                        <strong class="text-red"><?php echo $ud->second_account_number; ?></strong>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 justify-content-center align-content-center text-center py-2">
+                        <div class="col-md-2 justify-content-center align-content-center" style="display: flex;">
                             <button type="button" class="btn btn-rounded btn-secondary text-white p-1"
                                 style="font-size: 11px;"
                                 onclick="goto('wallet-funding', 'Fund Wallet', 'fund wallet');">Fund Wallet</button>
@@ -628,13 +626,11 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group mb-1">
-                                    <input class="form-control" name="smartCardNo" id="smartCardNo" type="text"
-                                        placeholder="SmartCard Number" onkeydown="confirmIUC()" onkeyup="confirmIUC();"
-                                        style="display: none;">
-                                    <input class="form-control" name="iucnumber" id="iucnumber" type="text"
-                                        placeholder="IUC Number" onkeydown="confirmIUC()" onkeyup="confirmIUC();"
-                                        style="display: none;">
-                                    <input class="form-control" name="st-number" id="st-number" type="text"
+                                    <input class="form-control card-checker" name="smartCardNo" id="smartCardNo"
+                                        type="text" placeholder="SmartCard Number" style="display: none;">
+                                    <input class="form-control card-checker" name="iucnumber" id="iucnumber" type="text"
+                                        placeholder="IUC Number" style="display: none;">
+                                    <input class="form-control card-checker" name="st-number" id="st-number" type="text"
                                         placeholder="Startimes Number" onkeydown="confirmST()" onkeyup="confirmST();"
                                         style="display: none;">
                                 </div>
@@ -1003,7 +999,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-12 text-center justify-content-center align-content-middle pb-3">
-                                <span><img src="public/images/fund-wallet2.png" width="120px" height="auto"
+                                <span><img src="public/images/referrer.png" width="120px" height="auto"
                                         class="custom-img" /></span>
                                 <h5 class="text-white mt-3">Please provide details:</h5>
                             </div>

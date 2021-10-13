@@ -25,7 +25,8 @@
                     <div class="col-lg-6">
                         <div class="feature-list__one">
                             <div class="row pr-5 pl-5">
-                                <div class="col-lg-3 col-md-6 col-sm-6 wow move-up">
+                                <div class="col-lg-3 col-md-6 col-sm-6 wow move-up" style="cursor: pointer;"
+                                    onclick="window.location.href = 'dashboard.php';">
                                     <!-- ht-box-icon Start -->
                                     <div class="ht-box-icon style-01 single-svg-icon-box">
                                         <div class="icon-box-wrap">
@@ -39,7 +40,8 @@
                                     </div>
                                     <!-- ht-box-icon End -->
                                 </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6 wow move-up">
+                                <div class="col-lg-3 col-md-6 col-sm-6 wow move-up" style="cursor: pointer;"
+                                    onclick="window.location.href = 'dashboard.php';">
                                     <!-- ht-box-icon Start -->
                                     <div class="ht-box-icon style-01 single-svg-icon-box">
                                         <div class="icon-box-wrap">
@@ -53,7 +55,8 @@
                                     </div>
                                     <!-- ht-box-icon End -->
                                 </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6 wow move-up">
+                                <div class="col-lg-3 col-md-6 col-sm-6 wow move-up" style="cursor: pointer;"
+                                    onclick="window.location.href = 'dashboard.php';">
                                     <!-- ht-box-icon Start -->
                                     <div class="ht-box-icon style-01 single-svg-icon-box">
                                         <div class="icon-box-wrap">
@@ -67,7 +70,8 @@
                                     </div>
                                     <!-- ht-box-icon End -->
                                 </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6 wow move-up">
+                                <div class="col-lg-3 col-md-6 col-sm-6 wow move-up" style="cursor: pointer;"
+                                    onclick="window.location.href = 'dashboard.php';">
                                     <!-- ht-box-icon Start -->
                                     <div class="ht-box-icon style-01 single-svg-icon-box">
                                         <div class="icon-box-wrap">
@@ -95,18 +99,7 @@
                                     </div>
                                     <!-- ht-box-icon End -->
                                 </div>
-                                <!--                                <div class="col-lg-3 col-md-6 col-sm-6 wow move-up">-->
-                                <!--                                    <div class="ht-box-icon style-01 single-svg-icon-box">-->
-                                <!--                                        <div class="icon-box-wrap">-->
-                                <!--                                            <div class="icon">-->
-                                <!--                                                <img src="assets/images/icons/19.png" width="65" height="65" />-->
-                                <!--                                            </div>-->
-                                <!--                                            <div class="content">-->
-                                <!--                                                <h5 class="heading">Crypto Exchange</h5>-->
-                                <!--                                            </div>-->
-                                <!--                                        </div>-->
-                                <!--                                    </div>-->
-                                <!--                                </div>-->
+
                                 <div class="col-lg-3 col-md-6 col-sm-6 wow move-up">
                                     <!-- ht-box-icon Start -->
                                     <div class="ht-box-icon style-01 single-svg-icon-box">

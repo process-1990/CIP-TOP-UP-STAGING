@@ -40,22 +40,22 @@
                 <p class="font-light text-1xl">To sign in, type in your registered phone number and password:</p>
             </div>
             <div class="contact-form__two">
-                <div class="contact-inner">
+
+                <div class="row col-12 p-0 m-0">
+                    <code
+                        style="background-color: #fffefe; padding: 15px; border: solid 1px #cccccc; border-radius: 12px; font-size: 13px;">For
+                        Existing users, if this is your first time on this new platform, kindly use the password
+                        reset link to set a new password, after that a password reset link would be sent to your
+                        mail(INBOX/SPAM FOLDER). click on it to set a new password then login with your new
+                        credentials</code>
+                </div>
+                <div class="contact-inner mt-2">
                     <input name="phone_number" id="phone_number" type="number" placeholder="Registered phone number *">
                 </div>
                 <div class="contact-inner col-md-12 p-0 m-0" id="input_container">
                     <input name="password" id="password" type="password" placeholder="Password *" id="inputer">
                     <i class="fas fa-eye input_btn" id="eye" style="color: #999999 !important;"></i>
                 </div>
-                <!-- <div class="contact-inner row">-->
-                <!-- <div class="col-md-11 p-0 m-0">-->
-                <!-- <input name="password" id="password" type="password" placeholder="Password *" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">-->
-                <!-- </div>-->
-                <!-- <div class="col-md-1 p-0 m-0">-->
-                <!-- <button id="eye" class="btn p-1" type="button" style="border-top-left-radius: 0px; border-bottom-left-radius: 0px; margin-top: 0px !important; background-color: #cccccc !important;" >-->
-                <!-- <i class="fas fa-eye" style="color: #f4f0f0 !important;"></i></button>-->
-                <!-- </div>-->
-                <!-- </div>-->
                 <div class="contact-inner text-right pt-2">
                     <p><a href="forgotten-password.php">Forgot password?</a></p>
                 </div>
@@ -65,14 +65,6 @@
                 </div>
                 <div class="contact-inner text-left pt-2">
                     <p>Don't have an account? <a href="sign-up.php"><b>Sign Up</b></a></p>
-                </div>
-                <div class="row col-12">
-                    <small
-                        style="background-color: #cfcfcf; padding: 15px; border: solid 1px #3c3c3c; border-radius: 12px;">For
-                        Existing users, if this is your first time on this new platform, kindly use the password
-                        reset link to set a new password, after that a password reset link would be sent to your
-                        mail(INBOX/SPAM FOLDER). click on it to set a new password then login with your new
-                        credentials</small>
                 </div>
 
             </div>

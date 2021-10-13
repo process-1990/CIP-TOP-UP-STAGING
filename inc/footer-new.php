@@ -211,7 +211,7 @@ $(document).ready(function() {
                 console.log(response.status);
                 // return
                 $("#" + id).html("Please wait...");
-                if (response.status == "success") {
+                if (response.status === "success") {
                     // swal("Success!", response.message, 'success');
                     toastr.success('Thanks for using CIP Topup', 'Successful', {
                         timeOut: 15000
@@ -617,6 +617,74 @@ function typeChecker(id) {
     // }
 }
 
+//setup before functions
+var typingTimer; //timer identifier
+var doneTypingInterval = 5000; //time in ms, 5 second for example
+var $input = $('.card-checker');
+
+//on keyup, start the countdown
+$input.on('keyup', function() {
+    $("#cable-checker").html("<small>Please wait, checking...</small>");
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(doneTyping, doneTypingInterval);
+});
+
+//on keydown, clear the countdown 
+$input.on('keydown', function() {
+    clearTimeout(typingTimer);
+});
+
+//user is "finished typing," do something
+function doneTyping() {
+    if ($("#cable-type").val() == "dstv") {
+        var cableNumber = $("#smartCardNo").val();
+        console.log(cableNumber);
+        var cableType = "dstv";
+    } else if ($("#cable-type").val() == "gotv") {
+        var cableNumber = $("#iucnumber").val();
+        console.log(cableNumber);
+        var cableType = "gotv";
+    }
+    var settings = {
+        "url": "https://api.ciptopup.ng/api/v1/tv/verify",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Authorization": "Bearer <?php echo $_COOKIE["access_token"]; ?>",
+            "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+            "type": cableType,
+            "card_number": cableNumber
+        }),
+    };
+    $.ajax(settings).done(function(response) {
+        console.log(response);
+        if (response.status == 'success') {
+            $("#cable-checker").html(response.data.customerName);
+            const a = response.data.product;
+            a.forEach(function(item) {
+                const optionObj = document.createElement("option");
+                optionObj.textContent = item.name + " - " + item.code;
+                optionObj.value = item.price;
+                $("#cable-amount").val(item.price);
+                if ($("#cable-type").val() == "dstv") {
+                    document.getElementById("dstv-plan").appendChild(optionObj);
+                    $("#dstv-plan-code").val(item.code);
+                } else if ($("#cable-type").val() == "gotv") {
+                    document.getElementById("gotv-plan").appendChild(optionObj);
+                    $("#gotv-plan-code").val(item.code);
+                }
+
+            });
+            return;
+        } else {
+            $("#cable-checker").html(response.message);
+            return;
+        }
+    });
+}
+
 function confirmIUC() {
     $("#cable-checker").html("<small>Please wait, checking...</small>");
     if ($("#cable-type").val() == "dstv") {
@@ -754,19 +822,20 @@ function purchaseCable(id) {
                             toastr.success('Successful', 'Thanks for using CIP Topup', {
                                 timeOut: 15000
                             });
-                            swal("Successful!", response.message, "success");
-                            // setTimeout(function(){
-                            //     window.location.href = "dashboard.php";
-                            // }, 5000);
+                            // setTimeout(function() {
+                            //     window.location.reload();
+                            // }, 7000);
                         } else {
                             $('#' + id).html('Pay');
-                            toastr.success('Oops!', response.message, {
-                                timeOut: 10000
-                            });
-                            swal("Opps!", response.message, 'error');
-                            // setTimeout(function(){
-                            //     window.location.href = "dashboard.php";
-                            // }, 5000);
+                            let p = response.errors;
+                            for (var key in p) {
+                                toastr.error(p[key], "Error:", {
+                                    timeOut: 10000
+                                });
+                            }
+                            // setTimeout(function() {
+                            //     window.location.reload();
+                            // }, 7000);
                         }
                     }
                 });
@@ -807,17 +876,17 @@ function purchaseCable(id) {
                             toastr.success('Successful', 'Thanks for using CIP Topup', {
                                 timeOut: 15000
                             });
-                            swal("Successful!", response.message, "success");
-                            setTimeout(function() {
-                                window.location.href = "dashboard.php";
-                            }, 5000);
+                            // setTimeout(function() {
+                            //     window.location.href = "dashboard.php";
+                            // }, 5000);
                         } else {
                             $('#' + id).html('Pay');
-                            toastr.success('Oops', response.message, {
-                                timeOut: 10000
-                            });
-                            swal("Opps!", response.message, 'error');
-
+                            let p = response.errors;
+                            for (var key in p) {
+                                toastr.error(p[key], "Error:", {
+                                    timeOut: 10000
+                                });
+                            }
                             // setTimeout(function(){
                             //     window.location.href = "dashboard.php";
                             // }, 5000);
@@ -873,14 +942,12 @@ function purchaseCable(id) {
                             // }, 5000);
                         } else {
                             $('#' + id).html('Pay');
-                            toastr.success('Oops!', response.message, {
-                                timeOut: 10000
-                            });
-                            swal("Opps!", response.message, 'error');
-
-                            // setTimeout(function(){
-                            //     window.location.href = "dashboard.php";
-                            // }, 5000);
+                            let p = response.errors;
+                            for (var key in p) {
+                                toastr.error(p[key], "Error:", {
+                                    timeOut: 10000
+                                });
+                            }
                         }
                     }
                 });
@@ -928,10 +995,12 @@ function purchaseCable(id) {
                             // }, 5000);
                         } else {
                             $('#' + id).html('Pay');
-                            toastr.success('Oops', response.message, {
-                                timeOut: 10000
-                            });
-                            swal("Opps!", response.message, 'error');
+                            let p = response.errors;
+                            for (var key in p) {
+                                toastr.error(p[key], "Error:", {
+                                    timeOut: 10000
+                                });
+                            }
                         }
                     }
                 });

@@ -1,10 +1,12 @@
 <?php
+// echo json_encode($_POST);
+// return;
     session_start();
     require_once("../controller.php");
     $action = "POST";
     $url = "https://api.ciptopup.ng/api/v1/tv/paytv";
     $parameters = json_encode([
-        "bouque" => $_POST['bouque'],
+        "type" => $_POST['type'],
         "card_number" => $_POST['card_number'],
         "plan" => $_POST['plan'],
         "payment" => isset($_POST['payment']) ? $_POST['payment'] : '',
