@@ -185,7 +185,6 @@ $(document).ready(function() {
         if ($("#data_phone_number").val() == "") {
             $("#" + id).html('Pay');
             document.getElementById(id).disabled = false;
-            // swal("Oops!", "Select a network carrier!", "error");
             toastr.warning("Oops!", "Select a network carrier!", {
                 timeOut: 10000
             });
@@ -208,11 +207,9 @@ $(document).ready(function() {
                 "payment": payment
             },
             success: function(response) {
-                console.log(response.status);
-                // return
+                console.log(response.data.status);
                 $("#" + id).html("Please wait...");
-                if (response.status === "success") {
-                    // swal("Success!", response.message, 'success');
+                if (response.message === "Transaction successful") {
                     toastr.success('Thanks for using CIP Topup', 'Successful', {
                         timeOut: 15000
                     });
@@ -222,7 +219,6 @@ $(document).ready(function() {
                 } else if (response.status === "failed") {
                     $('#' + id).html('Buy');
                     document.getElementById(id).disabled = false;
-                    // swal("Success!", response.message, 'error');
                     toastr.error(response.message, "Failed!", {
                         timeOut: 15000
                     });
@@ -234,7 +230,6 @@ $(document).ready(function() {
                         toastr.success(p[key], "Error:", {
                             timeOut: 10000
                         });
-                        swal("Opps!", p[key], 'error');
                     }
                 }
             }
@@ -445,35 +440,11 @@ function goto(id, title, carrier) {
         $("#slider").show();
         $("#tabs").show();
         swal('Coming Soon!', 'Service unavailable.', 'info');
-        // $(".trans_id").html(title)
-        // $("#provider").hide();
-        // $("#airtime-data").hide();
-        // $("#cable-form").hide();
-        // $("#power-form").hide();
-        // $("#airtime-data-confirm").hide();
-        // $("#cable-confirm").hide();
-        // $("#power-confirm").hide();
-        // $("#airtime-to-cash").hide();
-        // $("#wallet-to-wallet").hide();
-        // $("#wallet-funding").hide();
-        // $("#bundle-funding").fadeIn(800);
     } else if (id === "bundle-smile") {
         $("#shortcut").show();
         $("#slider").show();
         $("#tabs").show();
         swal('Coming Soon!', 'Service unavailable.', 'info');
-        // $(".trans_id").html(title)
-        // $("#provider").hide();
-        // $("#airtime-data").hide();
-        // $("#cable-form").hide();
-        // $("#power-form").hide();
-        // $("#airtime-data-confirm").hide();
-        // $("#cable-confirm").hide();
-        // $("#power-confirm").hide();
-        // $("#airtime-to-cash").hide();
-        // $("#wallet-to-wallet").hide();
-        // $("#wallet-funding").hide();
-        // $("#bundle-smile").fadeIn(800);
     } else if (id === "transfer") {
         $("#shortcut").show();
         $("#slider").show();
@@ -539,34 +510,6 @@ function generateAcct() {
         window.location.reload();
     });
 }
-
-// function typeChecker2(id) {
-//     if ($("#" + id).val() == 'Internet' && $("#identifier").val() == "mtn") {
-//         $("#data-type").show();
-//         $("#data-type-lyt").show();
-//         $("#data-other").hide();
-//         $("#data-other-lyt").hide();
-//         $("#amount").hide();
-//         $("#amount-lyt").hide();
-//     } else if ($("#" + id).val() == 'Internet' && $("#identifier").val() != "mtn") {
-//         $("#data-other").show();
-//         $("#data-other-lyt").show();
-//         $("#data-type").hide();
-//         $("#amount").hide();
-//         $("#data-type-lyt").hide();
-//         $("#amount-lyt").hide();
-//         typeChecker($("#identifier").val());
-//     } else if ($("#" + id).val() == 'Airtime') {
-//         $("#data-type").hide();
-//         $("#data-other").hide();
-//         $("#data-type-lyt").hide();
-//         $("#data-other-lyt").hide();
-//         $("#amount").show();
-//         $("#amount-lyt").show();
-//     }
-// }
-
-
 
 function typeChecker(id) {
 
