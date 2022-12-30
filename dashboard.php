@@ -371,7 +371,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">
+
+                                   <!-- <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2"> 
                                         <div class="widget-stat card"
                                             onclick="goto('power-form', 'Provider YEDC', 'YEDC');">
                                             <div class="card-body p-0">
@@ -379,7 +380,7 @@
                                                     class="custom-img" />
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">
                                         <div class="widget-stat card"
                                             onclick="goto('power-form', 'Provider PHEDC', 'PHEDC');">
@@ -407,7 +408,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">
+                                   <!-- <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">
                                         <div class="widget-stat card"
                                             onclick="goto('power-form', 'Provider EEDC', 'EEDC');">
                                             <div class="card-body p-0">
@@ -415,8 +416,8 @@
                                                     class="custom-img" />
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">
+                                    </div> -->
+                                   <!-- <div class="col-xl-2 col-xxl-2 col-lg-2 col-sm-6 mb-2">
                                         <div class="widget-stat card"
                                             onclick="goto('power-form', 'Provider BEDC', 'BEDC');">
                                             <div class="card-body p-0">
@@ -424,7 +425,7 @@
                                                     class="custom-img" />
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <div id="navpills-5" class="tab-pane">
@@ -506,6 +507,10 @@
                                         onchange="typeChecker(this.value);" onselect="typeChecker(this.id);">
                                         <option value="">Select Type</option>
                                         <option value="mtn-gifting">MTN GIFTING</option>
+                                        <option value="mtn">MTN SME</option>
+					<option value="glo">GLO</option>
+					<option value="airtel">AIRTEL</option>
+					<option value="etisalat">9MOBILE</option>
                                         <!-- <option value="mtn">MTN SME</option> -->
                                     </select>
                                 </div>
@@ -640,6 +645,20 @@
                                         id="cable-checker"></a>
                                 </div>
                             </div>
+				<div class="col-lg-12 mb-2">
+                                <div class="form-group">
+                                    <select class="form-control" id="tv-type" name="tv-type">
+                                        <option value="renew" selected>Renew Plan</option> 
+ 					<option value="change">Change Plan</option>
+                                    </select>
+					<div class="bootstrap-badge mb-2">
+					<a href="javascript:void()"
+                                        class="badge badge-rounded badge-outline-light text-white"
+                                        id="cable-current"></a>
+					</div>
+                                </div>
+                            </div>
+
                             <div class="col-lg-12 mb-2">
                                 <div class="form-group">
                                     <select class="form-control" id="gotv-plan" name="gotv-plan"
@@ -653,13 +672,14 @@
                                         <option value="">Select plan</option>
                                     </select>
                                     <input type="hidden" name="dstv-plan-code" id="dstv-plan-code" />
-                                    <select class="form-control" id="st-plan" name="st-plan" onchange="setDstvPrice();"
+                                    <select class="form-control" id="st-plan" name="st-plan" onchange="setSTPrice();"
                                         style="display: none">
                                         <option value="">Select plan</option>
                                     </select>
                                     <input type="hidden" name="st-plan-code" id="st-plan-code" style="display: none;" />
                                 </div>
                             </div>
+
                             <div class="col-lg-12 mt-2">
                                 <div class="row form-group mb-0">
                                     <div class="col-lg-4">
@@ -726,8 +746,8 @@
                             <div class="col-lg-12 mb-2">
                                 <div class="form-group">
                                     <select class="form-control" id="power-type" name="power-type">
-                                        <option value="Prepaid" selected>Prepaid</option>
-                                        <option value="Postpaid">Postpaid</option>
+                                        <option value="prepaid" selected>Prepaid</option>
+                                        <option value="postpaid">Postpaid</option> 
                                     </select>
                                 </div>
                             </div>

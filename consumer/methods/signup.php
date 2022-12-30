@@ -19,8 +19,7 @@
             "password_confirmation": "'.$_POST['password_confirmation'].'",
             "first_name": "'.$_POST['first_name'].'",
             "last_name": "'.$_POST['last_name'].'",
-            "phone": "'.$_POST['phone'].'",
-            "referrer": ""
+            "phone": "'.$_POST['phone'].'"
         }',
         CURLOPT_HTTPHEADER => array(
             'Accept: application/json',

@@ -25,6 +25,17 @@ if(isset($_COOKIE["access_token"]) || !empty($_COOKIE["access_token"]) || isset(
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J9WP5DZ8MM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J9WP5DZ8MM');
+</script>
+
     <title>CiP Topup - <?php //echo ucfirst($ud->last_name).' '.ucfirst($ud->first_name); ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -460,11 +471,7 @@ if(isset($_COOKIE["access_token"]) || !empty($_COOKIE["access_token"]) || isset(
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-6 text-left">
-                        <p class="text-center top-message"><i class="fas fa-envelope text-danger"></i> :
-                            info@ciptopup.com | <i class="fas fa-phone text-danger"></i> : 09137574484 | <i
-                                class="fab fa-instagram text-danger"></i> : cip.topup | <a
-                                href="https://wa.link/46ud2o"><i class="fab fa-whatsapp text-danger"></i> :
-                                09137574484</a></p>
+                       <marquee behavior="" direction=""><p class="text-center top-message"><i class="fas fa-bolt text-danger"></i><b>8years Anniversary PROMO!</b></p></marquee>
                     </div>
                     <div class="col-lg-6 text-right">
                         <!--                    <p class="text-center top-message"><i class="fas fa-phone"></i> : <b>09137574484</b> | <a href="https://wa.link/46ud2o"><i class="fab fa-whatsapp"></i> : <b>09137574484</b></a></p>-->
@@ -498,7 +505,7 @@ if(isset($_COOKIE["access_token"]) || !empty($_COOKIE["access_token"]) || isset(
                                                 <nav class="navigation-menu primary--menu">
 
                                                     <ul>
-                                                        <li class=""><a href="index.php"><span>How it works</span></a>
+                                                        <li class=""><a href="https://web.ciptopup.com.ng"><span>Buy Data Now</span></a>
                                                         </li>
                                                         <li class=""><a
                                                                 href="<?php echo isset($_COOKIE["access_token"]) ? '#' : 'transaction-history.php'; ?>"><span>My

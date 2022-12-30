@@ -6,9 +6,13 @@
     $action = "POST";
     $url = "https://api.ciptopup.ng/api/v1/tv/paytv";
     $parameters = json_encode([
-        "type" => $_POST['type'],
-        "card_number" => $_POST['card_number'],
-        "plan" => $_POST['plan'],
+        "type" => 'dstv',
+	"subtype" => 'renew',
+	"amount" => '1800',
+        "card_number" => '6678876',
+        "plan" => 'dstv-padi',
+	"reference" => '1234feh',
+
         "payment" => isset($_POST['payment']) ? $_POST['payment'] : '',
         "online_reference" => isset($_POST['online_reference']) ? $_POST['online_reference'] : ''
     ]);

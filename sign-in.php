@@ -40,15 +40,6 @@
                 <p class="font-light text-1xl">To sign in, type in your registered phone number and password:</p>
             </div>
             <div class="contact-form__two">
-
-                <div class="row col-12 p-0 m-0">
-                    <code
-                        style="background-color: #fffefe; padding: 15px; border: solid 1px #cccccc; border-radius: 12px; font-size: 13px;">For
-                        Existing users, if this is your first time on this new platform, kindly use the password
-                        reset link to set a new password, after that a password reset link would be sent to your
-                        mail(INBOX/SPAM FOLDER). click on it to set a new password then login with your new
-                        credentials</code>
-                </div>
                 <div class="contact-inner mt-2">
                     <input name="phone_number" id="phone_number" type="number" placeholder="Registered phone number *">
                 </div>

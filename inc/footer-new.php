@@ -587,7 +587,12 @@ function doneTyping() {
         var cableNumber = $("#iucnumber").val();
         console.log(cableNumber);
         var cableType = "gotv";
+    } else if ($("#cable-type").val() == "startimes") {
+        var cableNumber = $("#st-number").val();
+        console.log(cableNumber);
+        var cableType = "startimes";
     }
+
     var settings = {
         "url": "https://api.ciptopup.ng/api/v1/tv/verify",
         "method": "POST",
@@ -605,19 +610,25 @@ function doneTyping() {
         console.log(response);
         if (response.status == 'success') {
             $("#cable-checker").html(response.data.customerName);
+	    $("#cable-current").html('Current Plan: '+response.data.customerCurrent);
+
             const a = response.data.product;
             a.forEach(function(item) {
                 const optionObj = document.createElement("option");
-                optionObj.textContent = item.name + " - " + item.code;
-                optionObj.value = item.price;
-                $("#cable-amount").val(item.price);
+                optionObj.textContent = item.name;
+                optionObj.value = item.variation_code+','+item.variation_amount;
+                $("#cable-amount").val(item.variation_amount);
                 if ($("#cable-type").val() == "dstv") {
                     document.getElementById("dstv-plan").appendChild(optionObj);
-                    $("#dstv-plan-code").val(item.code);
+                    $("#dstv-plan-code").val(item.variation_code);
                 } else if ($("#cable-type").val() == "gotv") {
                     document.getElementById("gotv-plan").appendChild(optionObj);
-                    $("#gotv-plan-code").val(item.code);
+                    $("#gotv-plan-code").val(item.variation_code);
+                } else if ($("#cable-type").val() == "startimes") {
+                    document.getElementById("st-plan").appendChild(optionObj);
+                    $("#st-plan-code").val(item.variation_code);
                 }
+
 
             });
             return;
@@ -638,7 +649,12 @@ function confirmIUC() {
         var cableNumber = $("#iucnumber").val();
         console.log(cableNumber);
         var cableType = "gotv";
+    } else if ($("#cable-type").val() == "startimes") {
+        var cableNumber = $("#iucnumber").val();
+        console.log(cableNumber);
+        var cableType = "startimes";
     }
+
     var settings = {
         "url": "https://api.ciptopup.ng/api/v1/tv/verify",
         "method": "POST",
@@ -660,16 +676,20 @@ function confirmIUC() {
             const a = response.data.product;
             a.forEach(function(item) {
                 const optionObj = document.createElement("option");
-                optionObj.textContent = item.name + " - " + item.code;
-                optionObj.value = item.price;
-                $("#cable-amount").val(item.price);
+                optionObj.textContent = item.name;
+                optionObj.value = item.variation_code+','+item.variation_amount;
+                $("#cable-amount").val(item.variation_amount);
                 if ($("#cable-type").val() == "dstv") {
                     document.getElementById("dstv-plan").appendChild(optionObj);
-                    $("#dstv-plan-code").val(item.code);
+                    $("#dstv-plan-code").val(item.variation_code);
                 } else if ($("#cable-type").val() == "gotv") {
                     document.getElementById("gotv-plan").appendChild(optionObj);
-                    $("#gotv-plan-code").val(item.code);
+                    $("#gotv-plan-code").val(item.variation_code);
+                } else if ($("#cable-type").val() == "startimes") {
+                    document.getElementById("st-plan").appendChild(optionObj);
+                    $("#st-plan-code").val(item.variation_code);
                 }
+
 
             });
             return;
@@ -681,6 +701,25 @@ function confirmIUC() {
 }
 
 function confirmMeter() {
+if($("#distribution-company").val()=='IBEDC'){
+var disco='ibadan-electric';
+}else if($("#distribution-company").val()=='AEDC'){
+var disco='abuja-electric';
+}else if($("#distribution-company").val()=='KEDCO'){
+var disco='kano-electric';
+}else if($("#distribution-company").val()=='KAEDC'){
+var disco='kaduna-electric';
+}else if($("#distribution-company").val()=='PHEDC'){
+var disco='portharcourt-electric';
+}else if($("#distribution-company").val()=='IKEDC'){
+var disco='ikeja-electric';
+}else if($("#distribution-company").val()=='EKEDC'){
+var disco='eko-electric';
+}else if($("#distribution-company").val()=='JEDC'){
+var disco='jos-electric';
+}
+
+
     $("#meter-checker").html("<small>Validating...</small>");
     var checkerMeter = {
         "url": "https://api.ciptopup.ng/api/v1/electricity/verify",
@@ -691,7 +730,7 @@ function confirmMeter() {
             "Content-Type": "application/json"
         },
         "data": JSON.stringify({
-            "disco": $("#distribution-company").val(),
+            "disco": disco,
             "meter_number": $("#meterNo").val()
         }),
     };
@@ -710,19 +749,21 @@ function confirmMeter() {
 }
 
 function setGotvPrice() {
-    $("#cable-amount").val($("#gotv-plan").val());
+    //$("#cable-amount").val($("#gotv-plan").val());
     var sel = document.getElementById("gotv-plan");
-    var text = sel.options[sel.selectedIndex].text;
-    var value = text.split(' - ');
-    $('#dstv-plan-code').val(value[1]);
+    var text = sel.options[sel.selectedIndex].value;
+    var value = text.split(',');
+    $('#gotv-plan-code').val(value[0]);
+    $('#cable-amount').val(value[1]);
 }
 
 function setDstvPrice() {
-    $("#cable-amount").val($("#dstv-plan").val());
+   // $("#cable-amount").val($("#dstv-plan").val());
     var sel = document.getElementById("dstv-plan");
-    var text = sel.options[sel.selectedIndex].text;
-    var value = text.split(' - ');
-    $('#dstv-plan-code').val(value[1]);
+    var text = sel.options[sel.selectedIndex].value;
+    var value = text.split(',');
+    $('#dstv-plan-code').val(value[0]);
+     $('#cable-amount').val(value[1]);
 }
 
 
@@ -735,7 +776,7 @@ function purchaseCable(id) {
                 $("#" + id).html("Pay");
                 document.getElementById(id).disabled = false;
                 // swal("Oops!", "SmartCard number empty!", "error");
-                toastr.warning("Oops!", "SmartCard number empty!", {
+                toastr.warning("Oops!", $("#tv-type").val(), {
                     timeOut: 10000
                 });
                 return;
@@ -749,9 +790,12 @@ function purchaseCable(id) {
                 return;
             } else {
                 var data = {
-                    "type": "DSTV",
+                    "type": "dstv",
                     "card_number": $("#smartCardNo").val(),
                     "plan": $("#dstv-plan-code").val(),
+		    "subtype": $("#tv-type").val(),
+		    "amount": $("#cable-amount").val(),
+
                 };
                 $.ajax({
                     url: "consumer/methods/buy-tv.php",
@@ -797,15 +841,18 @@ function purchaseCable(id) {
                 $("#" + id).html("Pay");
                 document.getElementById(id).disabled = false;
                 // swal("Oops!", "Choose from the plan", "error");
-                toastr.warning("Oops!", "SmartCard number empty!", {
+                toastr.warning("Oops!", "Choose from the plan!", {
                     timeOut: 10000
                 });
                 return;
             } else {
                 var data = {
-                    "type": "GOTV",
+                    "type": "gotv",
                     "card_number": $("#iucnumber").val(),
                     "plan": $("#gotv-plan-code").val(),
+		    "subtype": $("#tv-type").val(),
+		    "amount": $("#cable-amount").val(),
+
                 };
                 $.ajax({
                     url: "consumer/methods/buy-tv.php",
@@ -862,9 +909,11 @@ function purchaseCable(id) {
                 return;
             } else {
                 var data = {
-                    "type": "DSTV",
+                    "type": "dstv",
                     "card_number": $("#smartCardNo").val(),
                     "plan": $("#dstv-plan-code").val(),
+		    "subtype": $("#tv-type").val(),
+		    "amount": $("#cable-amount").val(),
                     "payment": "bonus"
                 };
                 $.ajax({
@@ -915,9 +964,11 @@ function purchaseCable(id) {
                 return;
             } else {
                 var data = {
-                    "type": "GOTV",
+                    "type": "gotv",
                     "card_number": $("#iucnumber").val(),
                     "plan": $("#gotv-plan-code").val(),
+		    "subtype": $("#tv-type").val(),
+		    "amount": $("#cable-amount").val(),
                     "payment": "bonus"
                 };
                 $.ajax({
@@ -940,7 +991,7 @@ function purchaseCable(id) {
                             $('#' + id).html('Pay');
                             let p = response.errors;
                             for (var key in p) {
-                                toastr.error(p[key], "Error:", {
+                                toastr.error(p, "Error:", {
                                     timeOut: 10000
                                 });
                             }
@@ -984,6 +1035,7 @@ function purchasePower(id) {
             "disco": $("#distribution-company").val(),
             "meter_number": $("#meterNo").val(),
             "amount": $("#power-amount").val(),
+	    "type": $("#power-type").val(),
             "payment": payment
         };
         $.ajax({
@@ -1214,7 +1266,7 @@ function fundWallet(id) {
                 contractCode: "133541598312",
                 paymentDescription: "Account funding",
                 isTestMode: true,
-                paymentMethods: ["CARD", "ACCOUNT_TRANSFER"],
+                paymentMethods: ["CARD"],
                 onComplete: function(response) {
                     //Implement what happens when transaction is completed.
                     console.log(response);

@@ -3,10 +3,33 @@
     require_once("../controller.php");
     $action = "POST";
     $url = "https://api.ciptopup.ng/api/v1/electricity/pay";
+
+if($_POST['disco']=='AEDC'){
+  $disco='abuja-electric';
+}elseif($_POST['disco']=='IKEDC'){
+$disco='ikeja-electric';
+}elseif($_POST['disco']=='JEDC'){
+$disco='jos-electric';
+}elseif($_POST['disco']=='IBEDC'){
+$disco='ibadan-electric';
+}elseif($_POST['disco']=='KAEDC'){
+$disco='kaduna-electric';
+}elseif($_POST['disco']=='KEDCO'){
+$disco='kano-electric';
+}elseif($_POST['disco']=='EKEDC'){
+$disco='eko-electric';
+}elseif($_POST['disco']=='PHEDC'){
+$disco='portharcourt-electric';
+}else{
+	$disco=$_POST['disco'];
+}
+$paid_amount=$_POST['amount'];
+$amount=$paid_amount-100;
     $parameters = array(
-        "disco" => $_POST['disco'],
-        "meter_number" => $_POST['meter_number'],
-        "amount" => $_POST['amount'],
+        "disco" => $disco,
+        "meter_number" => $_POST['meter_number'], 
+        "amount" => $amount,
+        "type" => $_POST['type'],
         "payment" => isset($_POST['payment']) ? $_POST['payment'] : '',
         "online_reference" => isset($_POST['online_reference']) ? $_POST['online_reference'] : ''
     );

@@ -42,6 +42,18 @@ if(isset($_COOKIE["access_token"]) || !empty($_COOKIE["access_token"]) || $_COOK
     <title>CIP Topup <?php echo "- ".ucfirst($ud->last_name).' '.ucfirst($ud->first_name); ?></title>
 
     <meta name="description" content="Some description for the page" />
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MQD9CH4');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo/41.png">
     <link href="public/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
@@ -54,6 +66,8 @@ if(isset($_COOKIE["access_token"]) || !empty($_COOKIE["access_token"]) || $_COOK
     <link href="public/css/style.css" rel="stylesheet" type="text/css" />
     <link href="public/css/toastr.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
 
     <style type="text/css">
     /* Slideshow container */
@@ -187,6 +201,11 @@ if(isset($_COOKIE["access_token"]) || !empty($_COOKIE["access_token"]) || $_COOK
 </head>
 
 <body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQD9CH4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
     <!--*******************
         Preloader start

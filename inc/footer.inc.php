@@ -87,8 +87,12 @@
                             <p class="text-lg"><i class="fas fa-home"></i>: Suite SF21, Anafaara Plaza, Gwarimpa,
                                 Abuja.<br>
                                 <i class="fas fa-phone"></i> : <b>09137574484</b><br />
-                                <a href="https://wa.link/46ud2o"><i class="fab fa-whatsapp"></i> :
-                                    <b>09137574484</b></a><br><i class="fas fa-envelope"></i> :support@ciptopup.com
+                                <a href=""><i class="fab fa-telegram"></i> :
+                                    <b>09137574484</b></a>
+				<!-- <a href="https://wa.link/46ud2o"><i class="fab fa-whatsapp"></i> :
+                                    <b>09137574484</b></a> -->
+
+                                <br><i class="fas fa-envelope"></i> :support@ciptopup.com
                             </p>
                         </div>
                     </div>
@@ -148,7 +152,8 @@
                     <i class="fab fa-facebook fa-1x mr-2"></i>
                     <i class="fab fa-instagram fa-1x mr-2"></i>
                     <i class="fab fa-twitter fa-1x mr-2"></i>
-                    <a href="https://wa.link/46ud2o"><i class="fab fa-whatsapp fa-1x mr-2"></i></a>
+                    <i class="fab fa-telegram fa-1x mr-2"></i>
+ 		 <!-- <a href="https://wa.link/46ud2o"><i class="fab fa-whatsapp fa-1x mr-2"></i></a> -->
                 </div>
                 <div class="col-md-4 text-center">
                     <span class="text-xs text-opacity-10">Terms &amp; Conditions</a></span> |
