@@ -1,8 +1,9 @@
 <?php
     session_start();
     require_once("../controller.php");
+    $config = include('../../config.php');
     $action = "POST";
-    $url = "https://api.ciptopup.ng/api/v1/data/vend";
+    $url = $config["base_url"]."/api/v1/data/vend";
     $parameters = json_encode([
         "phone_number" => $_POST['phone_number'],
         "bundle" => $_POST['bundle'],

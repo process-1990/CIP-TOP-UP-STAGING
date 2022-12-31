@@ -1,5 +1,6 @@
 <?php require_once 'inc/header-new.php';
-$allUsers = $classer->FetchAllBundle(isset($_COOKIE["access_token"]) ? $_COOKIE['access_token'] : "", "https://api.ciptopup.ng/api/v1/admin/users/all?page=".$_GET['page']);
+$config = include('config.php');
+$allUsers = $classer->FetchAllBundle(isset($_COOKIE["access_token"]) ? $_COOKIE['access_token'] : "", $config["base_url"]."/api/v1/admin/users/all?page=".$_GET['page']);
 $allUsers = json_decode($allUsers, true);
 ?>
 

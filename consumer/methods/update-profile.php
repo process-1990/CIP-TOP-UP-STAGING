@@ -1,8 +1,9 @@
 <?php
     session_start();
     require_once("../controller.php");
+    $config = include('../../config.php');
     $action = "POST";
-    $url = "https://api.ciptopup.ng/api/v1/user/update";
+    $url = $config["base_url"]."/api/v1/user/update";
 
     if($_POST['action'] == 1){
         $parameters = json_encode([

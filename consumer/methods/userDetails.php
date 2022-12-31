@@ -1,6 +1,7 @@
 <?php
 session_start();
-$url = "https://api.ciptopup.ng/api/auth/user-profile";
+$config = include('../../config.php');
+$url = $config["base_url"]."/api/auth/user-profile";
 $curl = curl_init();
 
 curl_setopt_array($curl, [

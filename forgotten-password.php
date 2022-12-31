@@ -478,14 +478,17 @@
         <img class="img-fluid" src="assets/images/logo/42.png" alt="">
     </div>
 </div>
-<?php require_once 'inc/footer2-dashboard.php';?>
+<?php 
+    require_once 'inc/footer2-dashboard.php';
+    $config = include('config.php');
+?>
 <script type="text/javascript">
 $(document).ready(function() {
     $('#resetBtn').on("click", function() {
         $('#resetBtn').html('Please wait...');
         document.getElementById("resetBtn").disabled = true;
         var settings = {
-            "url": "https://api.ciptopup.ng/api/auth/password/forget",
+            "url": <?php $config["base_url"]; ?> + "/api/auth/password/forget",
             "method": "POST",
             "timeout": 0,
             "headers": {

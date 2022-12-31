@@ -1,8 +1,9 @@
 <?php
     session_start();
     require_once("../controller.php");
+    $config = include('../../config.php');
     $action = "POST";
-    $url = "https://api.ciptopup.ng/api/v1/airtime/topup";
+    $url = $config["base_url"]."/api/v1/airtime/topup";
     $parameters = json_encode([
         "phone_number" => $_POST['phone_number'],
         "network" => $_POST['network'],
@@ -12,7 +13,7 @@
     
     $curl = curl_init();
     curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://api.ciptopup.ng/api/v1/airtime/topup",
+        CURLOPT_URL => $config["base_url"]."/api/v1/airtime/topup",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,

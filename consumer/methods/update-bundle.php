@@ -1,11 +1,12 @@
 <?php
 session_start();
 require_once("../controller.php");
+$config = include('../../config.php');
 $action = "POST";
-$url = "https://api.ciptopup.ng/api/v1/airtime2cash/fund";
+$url = $config["base_url"]."/api/v1/airtime2cash/fund";
 $curl = curl_init();
 curl_setopt_array($curl, array(
-    CURLOPT_URL => 'https://api.ciptopup.ng/api/v1/admin/data/plans',
+    CURLOPT_URL => $config["base_url"].'/api/v1/admin/data/plans',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
