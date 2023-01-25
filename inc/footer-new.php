@@ -202,7 +202,7 @@ $(document).ready(function() {
             dataType: 'json',
             data: {
                 "phone_number": $('#data_phone_number').val(),
-                "bundle": $('#data-plan').val(),
+                "bundle": $('#data-plan').val() ?? $('#data-other').val(),
                 "network": $('#carrier').val(),
                 "web_hook_url": "https://env288793hwk.x.pipedream.net/",
                 "payment": payment
