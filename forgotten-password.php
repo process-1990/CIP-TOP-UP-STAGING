@@ -488,7 +488,7 @@ $(document).ready(function() {
         $('#resetBtn').html('Please wait...');
         document.getElementById("resetBtn").disabled = true;
         var settings = {
-            "url": <?php $config["base_url"]; ?> + "/api/auth/password/forget",
+            "url": <?php echo json_encode($config["base_url"]) ?> + "/api/auth/password/forget",
             "method": "POST",
             "timeout": 0,
             "headers": {

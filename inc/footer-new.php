@@ -1,4 +1,4 @@
-<?php $config = include('config.php'); ?>
+<?php $config = include('./config.php'); ?>
 <!-- Modal -->
 <div class="modal fade" id="airtime-to-cash-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -497,7 +497,7 @@ function generateAcct() {
     });
 
     var fetchDat = {
-        "url": <?php $config["base_url"]; ?> + "/api/v1/user/generateAccount",
+        "url": <?php echo json_encode($config["base_url"]) ?> + "/api/v1/user/generateAccount",
         "method": "GET",
         "timeout": 0,
         "headers": {
@@ -515,7 +515,7 @@ function generateAcct() {
 function typeChecker(id) {
 
     var fetchData = {
-        "url": <?php $config["base_url"]; ?> + "/api/v1/data/list?network=" + id,
+        "url":  <?php echo json_encode($config["base_url"]) ?> + "/api/v1/data/list?network=" + id,
         "method": "GET",
         "timeout": 0,
         "headers": {
@@ -595,7 +595,7 @@ function doneTyping() {
     }
 
     var settings = {
-        "url": <?php $config["base_url"]; ?> + "/api/v1/tv/verify",
+        "url": <?php echo json_encode($config["base_url"]) ?> + "/api/v1/tv/verify",
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -657,7 +657,7 @@ function confirmIUC() {
     }
 
     var settings = {
-        "url": <?php $config["base_url"]; ?> + "/api/v1/tv/verify",
+        "url": <?php echo json_encode($config["base_url"]) ?> + "/api/v1/tv/verify",
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -723,7 +723,7 @@ var disco='jos-electric';
 
     $("#meter-checker").html("<small>Validating...</small>");
     var checkerMeter = {
-        "url": <?php $config["base_url"]; ?> + "/api/v1/electricity/verify",
+        "url": <?php echo json_encode($config["base_url"]) ?> + "/api/v1/electricity/verify",
         "method": "POST",
         "timeout": 0,
         "headers": {
