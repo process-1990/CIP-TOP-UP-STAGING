@@ -1,8 +1,9 @@
 <?php
 session_start();
 require_once("../controller.php");
+$config = include('../../config.php');
 $action = "POST";
-$url = "https://api.ciptopup.ng/api/v1/wallet/transfer";
+$url = $config["base_url"]."/api/v1/wallet/transfer";
 
 $parameters = json_encode([
     "email" => $_POST['email'],

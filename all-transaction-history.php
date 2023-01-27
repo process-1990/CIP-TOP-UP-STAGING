@@ -1,6 +1,8 @@
 <?php
 require_once 'inc/header-new.php';
-$allTrans = $classer->fetch_all_user_transaction($_COOKIE["access_token"], "https://api.ciptopup.ng/api/v1/admin/transactions/all?page=".$_GET['page']);
+$config = include('config.php');
+
+$allTrans = $classer->fetch_all_user_transaction($_COOKIE["access_token"], $config["base_url"]."/api/v1/admin/transactions/all?page=".$_GET['page']);
 
 ?>
 

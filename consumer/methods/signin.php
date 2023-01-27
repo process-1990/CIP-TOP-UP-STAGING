@@ -1,7 +1,8 @@
 <?php
 require_once "../controller.php";
+$config = include('../../config.php');
 $action = "POST";
-$url = "https://api.ciptopup.ng/api/auth/login";
+$url = $config["base_url"]."/api/auth/login";
 
 $curl = curl_init();
 

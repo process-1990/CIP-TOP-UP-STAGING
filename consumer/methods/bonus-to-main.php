@@ -1,8 +1,9 @@
 <?php
 session_start();
 require_once("../controller.php");
+$config = include('../../config.php');
 $action = "GET";
-$url = "https://api.ciptopup.ng/api/v1/user/withdraw";
+$url = $config["base_url"]."/api/v1/user/withdraw";
 
 $curl = curl_init();
     curl_setopt_array($curl, array(

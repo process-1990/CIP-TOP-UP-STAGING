@@ -1,5 +1,6 @@
 <?php
 $curl = curl_init();
+$config = include('../../config.php');
 $params = json_encode(array(
     "email" => $_POST['email'],
     "token" => $_POST['token'],
@@ -7,7 +8,7 @@ $params = json_encode(array(
     "password_confirmation" => $_POST['password_confirmation']
 ));
 curl_setopt_array($curl, array(
-    CURLOPT_URL => 'https://api.ciptopup.ng/api/auth/password/forget',
+    CURLOPT_URL => $config["base_url"].'/api/auth/password/forget',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,

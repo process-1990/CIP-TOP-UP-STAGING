@@ -1,8 +1,9 @@
 <?php
 require_once("consumer/controller.php");
+$config = include('config.php');
 if(isset($_COOKIE["access_token"])){
-    $url = "https://api.ciptopup.ng/api/auth/user-profile";
-    $url2 = "https://api.ciptopup.ng/api/auth/logout";
+    $url = $config["base_url"]."/api/auth/user-profile";
+    $url2 = $config["base_url"]."/api/auth/logout";
     $classer = new CurlHelper();
     $userDetails = $classer->fetch_user_details($_COOKIE["access_token"], $url);
     $ud = isset($userDetails->data) ? $userDetails->data : "";

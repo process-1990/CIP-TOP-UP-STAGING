@@ -3,8 +3,9 @@
 // return;
     session_start();
     require_once("../controller.php");
+    $config = include('../../config.php');
     $action = "POST";
-    $url = "https://api.ciptopup.ng/api/v1/tv/paytv";
+    $url = $config["base_url"]."/api/v1/tv/paytv";
     $parameters = json_encode([
         "type" => 'dstv',
 	"subtype" => 'renew',

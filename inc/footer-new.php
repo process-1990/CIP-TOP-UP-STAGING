@@ -1,3 +1,4 @@
+<?php $config = include('./config.php'); ?>
 <!-- Modal -->
 <div class="modal fade" id="airtime-to-cash-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -201,7 +202,7 @@ $(document).ready(function() {
             dataType: 'json',
             data: {
                 "phone_number": $('#data_phone_number').val(),
-                "bundle": $('#data-plan').val(),
+                "bundle": $('#data-plan').val() ?? $('#data-other').val(),
                 "network": $('#carrier').val(),
                 "web_hook_url": "https://env288793hwk.x.pipedream.net/",
                 "payment": payment
@@ -496,7 +497,7 @@ function generateAcct() {
     });
 
     var fetchDat = {
-        "url": "https://api.ciptopup.ng/api/v1/user/generateAccount",
+        "url": <?php echo json_encode($config["base_url"]) ?> + "/api/v1/user/generateAccount",
         "method": "GET",
         "timeout": 0,
         "headers": {
@@ -514,7 +515,7 @@ function generateAcct() {
 function typeChecker(id) {
 
     var fetchData = {
-        "url": "https://api.ciptopup.ng/api/v1/data/list?network=" + id,
+        "url":  <?php echo json_encode($config["base_url"]) ?> + "/api/v1/data/list?network=" + id,
         "method": "GET",
         "timeout": 0,
         "headers": {
@@ -594,7 +595,7 @@ function doneTyping() {
     }
 
     var settings = {
-        "url": "https://api.ciptopup.ng/api/v1/tv/verify",
+        "url": <?php echo json_encode($config["base_url"]) ?> + "/api/v1/tv/verify",
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -656,7 +657,7 @@ function confirmIUC() {
     }
 
     var settings = {
-        "url": "https://api.ciptopup.ng/api/v1/tv/verify",
+        "url": <?php echo json_encode($config["base_url"]) ?> + "/api/v1/tv/verify",
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -722,7 +723,7 @@ var disco='jos-electric';
 
     $("#meter-checker").html("<small>Validating...</small>");
     var checkerMeter = {
-        "url": "https://api.ciptopup.ng/api/v1/electricity/verify",
+        "url": <?php echo json_encode($config["base_url"]) ?> + "/api/v1/electricity/verify",
         "method": "POST",
         "timeout": 0,
         "headers": {

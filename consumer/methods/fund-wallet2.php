@@ -1,8 +1,9 @@
 <?php
 session_start();
 require_once("../controller.php");
+$config = include('../../config.php');
 $action = "GET";
-$url = "https://api.ciptopup.ng/api/v1/payment/online?reference=".$_GET['reference'];
+$url = $config["base_url"]."/api/v1/payment/online?reference=".$_GET['reference'];
 
 $curl = curl_init();
     curl_setopt_array($curl, array(

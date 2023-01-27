@@ -1,6 +1,7 @@
 <?php require_once 'inc/header-new.php';
+$config = include('config.php');
 
-$allBun = $classer->FetchAllBundle($_COOKIE["access_token"], 'https://api.ciptopup.ng/api/v1/admin/data/plans?page='.$_GET['page']);
+$allBun = $classer->FetchAllBundle($_COOKIE["access_token"], $config["base_url"].'/api/v1/admin/data/plans?page='.$_GET['page']);
 $allBundle = json_decode($allBun, true);
 ?>
 
