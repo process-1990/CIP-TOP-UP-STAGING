@@ -1,6 +1,8 @@
 <?php
     require_once 'inc/header-new.php';
     $config = include('config.php');
+
+    $allTrans = $classer->fetch_all_user_transaction($_COOKIE["access_token"], $config["base_url"]."/api/v1/admin/transactions/all");
 ?>
 <?php require_once 'inc/sidebar.php'; ?>
 
@@ -50,32 +52,50 @@
 
  <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
   <script>
-
-    // Enable pusher logging - don't include this in production
-    // Pusher.logToConsole = true;
-
     var pusher = new Pusher('35bac4c1d842dd474250', {
       cluster: 'eu'
     });
 
-    localStorage.removeItem("transactions");
+    let transactions = <?php echo(json_encode($allTrans)) ?>;
+
+    localStorage.setItem("transactions", JSON.stringify(transactions.transactions.data));
+
+    const tableData = transactions.transactions.data.map(value => {
+        return (
+            `<tr>
+                <td style="font-size: 13px !important;">${value.id}</td>
+                <td style="font-size: 13px !important;">${value.description}</td>
+                <td style="font-size: 13px !important;">${value.user.last_name} ${value.user.first_name}</td>
+                <td style="font-size: 13px !important;">${value.user.phone}</td>
+                <td style="font-size: 13px !important;">${value.user.email}</td>
+                <td style="font-size: 13px !important;"><span class="badge light badge-success">${value.type}</span></td>
+                <td style="font-size: 13px !important;">#${value.amount}</strong></td>
+                <td style="font-size: 13px !important;"><span class="badge light badge-${value.status == 'failed' ? 'danger' : 'success'}">${value.status}</td>
+                <td style="font-size: 13px !important;">${(new Date(value.updated_at)).toLocaleString()}</td>
+            </tr>`
+        );
+        }).join('');
+
+        const tableBody = document.querySelector("#live-transactions");
+        tableBody.innerHTML = tableData;
+
     var channel = pusher.subscribe('transactions');
     channel.bind('new', function(newData) {
-        data = getData(newData)
+        data = getData(newData.data)
         localStorage.setItem("transactions", JSON.stringify(data));
 
         const tableData = data.map(value => {
         return (
             `<tr>
-                <td style="font-size: 13px !important;">${value.data.id}</td>
-                <td style="font-size: 13px !important;">${value.data.description}</td>
-                <td style="font-size: 13px !important;">${value.data.user.last_name} ${value.data.user.first_name}</td>
-                <td style="font-size: 13px !important;">${value.data.user.phone}</td>
-                <td style="font-size: 13px !important;">${value.data.user.email}</td>
-                <td style="font-size: 13px !important;"><span class="badge light badge-success">${value.data.type}</span></td>
-                <td style="font-size: 13px !important;">#${value.data.amount}</strong></td>
-                <td style="font-size: 13px !important;"><span class="badge light badge-${value.data.status == 'failed' ? 'danger' : 'success'}">${value.data.status}</td>
-                <td style="font-size: 13px !important;">${(new Date(value.data.updated_at)).toLocaleString()}</td>
+                <td style="font-size: 13px !important;">${value.id}</td>
+                <td style="font-size: 13px !important;">${value.description}</td>
+                <td style="font-size: 13px !important;">${value.user.last_name} ${value.user.first_name}</td>
+                <td style="font-size: 13px !important;">${value.user.phone}</td>
+                <td style="font-size: 13px !important;">${value.user.email}</td>
+                <td style="font-size: 13px !important;"><span class="badge light badge-success">${value.type}</span></td>
+                <td style="font-size: 13px !important;">#${value.amount}</strong></td>
+                <td style="font-size: 13px !important;"><span class="badge light badge-${value.status == 'failed' ? 'danger' : 'success'}">${value.status}</td>
+                <td style="font-size: 13px !important;">${(new Date(value.updated_at)).toLocaleString()}</td>
             </tr>`
         );
         }).join('');
