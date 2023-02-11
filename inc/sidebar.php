@@ -34,6 +34,12 @@
                     <span class="nav-text">Transaction History</span>
                 </a>
             </li>
+            <li><a class="has-arrow ai-icon" href="live-transactions.php" aria-expanded="false"
+                    data-toggle="tooltip" data-placement="right" title="Live Transaction">
+                    <i class="fas fa-stream"></i>
+                    <span class="nav-text">Live Transactions</span>
+                </a>
+            </li>
             <li><a href="consumer/methods/logout.php" class="ai-icon" aria-expanded="false" data-toggle="tooltip"
                     data-placement="right" title="Logout">
                     <i class="fas fa-sign-out-alt"></i>
