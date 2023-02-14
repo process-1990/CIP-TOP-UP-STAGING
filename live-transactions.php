@@ -58,8 +58,6 @@
 
     let transactions = <?php echo(json_encode($allTrans)) ?>;
 
-    console.log(transactions)
-
     localStorage.setItem("transactions", JSON.stringify(transactions.transactions.data));
 
     const tableData = transactions.transactions.data.map(value => {
