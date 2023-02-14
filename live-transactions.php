@@ -107,7 +107,9 @@
 
     function getData(newData){
         let transactions = [newData];
-        previous_data = JSON.parse(localStorage.getItem("transactions"));
+        previous_data = JSON.parse(localStorage.getItem("transactions")).filter(function(item){
+            return item.id != newData.id;
+        });
         if(Array.isArray(previous_data)){
            return transactions.concat(previous_data.slice(0, 100));
         }
