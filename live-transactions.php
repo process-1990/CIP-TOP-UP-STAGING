@@ -58,6 +58,8 @@
 
     let transactions = <?php echo(json_encode($allTrans)) ?>;
 
+    console.log(transactions)
+
     localStorage.setItem("transactions", JSON.stringify(transactions.transactions.data));
 
     const tableData = transactions.transactions.data.map(value => {
@@ -107,7 +109,9 @@
 
     function getData(newData){
         let transactions = [newData];
-        previous_data = JSON.parse(localStorage.getItem("transactions"));
+        previous_data = JSON.parse(localStorage.getItem("transactions")).filter(function(item){
+            return item.id != newData.id;
+        });
         if(Array.isArray(previous_data)){
            return transactions.concat(previous_data.slice(0, 100));
         }
