@@ -5,7 +5,7 @@ $config = include('config.php');
 if(isset($_COOKIE["access_token"]) || !empty($_COOKIE["access_token"]) || $_COOKIE["access_token"] == '' || isset($_COOKIE["user_role"]) || !empty($_COOKIE["user_role"]) || $_COOKIE["user_role"] != ""){
     $url = $config["base_url"]."/api/auth/user-profile";
     $url2 = $config["base_url"]."/api/auth/logout";
-    $url3 = $config["base_url"]."/api/v1/user/transactions?page=null";
+    $url3 = $config["base_url"]."/api/v1/user/transactions?page=".@$_GET['page'];
     $classer = new CurlHelper();
     $userDetails = $classer->fetch_user_details($_COOKIE["access_token"], $url);
     $userTrans = $classer->fetch_user_transaction($_COOKIE["access_token"], $url3);
