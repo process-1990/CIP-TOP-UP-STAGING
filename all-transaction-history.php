@@ -49,7 +49,7 @@ $allTrans = $classer->fetch_all_user_transaction($_COOKIE["access_token"], $conf
                                                     <td style="font-size: 13px !important;"><?php echo $trans['user']['email']; ?></td>
                                                     <td style="font-size: 13px !important;"><span class="badge light badge-success"><?php echo ucfirst($trans['type']); ?></span></td>
                                                     <td style="font-size: 13px !important;"><strong>#<?php echo $trans['amount']; ?></strong></td>
-                                                    <td style="font-size: 13px !important;"><?php $dat = explode("T", $trans['created_at']); echo $dat[0]; ?></td>
+                                                    <td style="font-size: 13px !important;"><?php  echo (new DateTime($trans['created_at'], new DateTimeZone('UTC')))->setTimezone(new DateTimeZone('Africa/Lagos'))->format('Y-m-d H:i:s'); ?></td>
                                                 </tr>
                                                 <?php } ?>
 
