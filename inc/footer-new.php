@@ -208,7 +208,6 @@ $(document).ready(function() {
                 "payment": payment
             },
             success: function(response) {
-                console.log(response.data.status);
                 $("#" + id).html("Please wait...");
                 if (response.message === "Transaction successful") {
                     toastr.success('Thanks for using CIP Topup', 'Successful', {
@@ -218,6 +217,12 @@ $(document).ready(function() {
                         window.location.href = "dashboard.php";
                     }, 5000);
                 } else if (response.status === "failed") {
+                    $('#' + id).html('Buy');
+                    document.getElementById(id).disabled = false;
+                    toastr.error(response.message, "Failed!", {
+                        timeOut: 15000
+                    });
+                } else if (response.data?.status === "failed") {
                     $('#' + id).html('Buy');
                     document.getElementById(id).disabled = false;
                     toastr.error(response.message, "Failed!", {
