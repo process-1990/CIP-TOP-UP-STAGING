@@ -287,6 +287,23 @@ $(document).ready(function() {
     // toastr.info('Check your internet...')
 });
 
+function replaceOptions(options) {
+  var select = document.getElementById("data-type");
+
+  var default_opts = {text: "Select Type", value: ""};
+  options = [default_opts, ...options]
+  
+  select.options.length = 0;
+  
+  for (var i = 0; i < options.length; i++) {
+    var option = document.createElement("option");
+    option.text = options[i].text;
+    option.value = options[i].value;
+    select.add(option);
+  }
+}
+
+
 function goto(id, title, carrier) {
     $("#shortcut").hide();
     $("#slider").hide();
@@ -298,22 +315,26 @@ function goto(id, title, carrier) {
                 '<img src="public/images/mtn.svg" width="120px" height="auto" style="border-radius: 20px; box-shadow: 2px 1px 1px 2px #ece4e4;" />'
             );
             $("#identifier").val('mtn');
+            replaceOptions([{ text: "MTN GIFTING", value: "mtn-gifting" }, { text: "MTN SME", value: "mtn" }]);
         } else if (carrier == "Glo") {
             $(".provider-logo").html(
                 '<img src="public/images/glo.svg" width="120px" height="auto" style="border-radius: 20px; box-shadow: 2px 1px 1px 2px #ece4e4;" />'
             );
 
             $("#identifier").val('glo');
+            replaceOptions([{ text: "GLO", value: "glo" }]);
         } else if (carrier == "Airtel") {
             $(".provider-logo").html(
                 '<img src="public/images/airtel.svg" width="120px" height="auto" style="border-radius: 20px; box-shadow: 2px 1px 1px 2px #ece4e4;" />'
             );
             $("#identifier").val('airtel');
+            replaceOptions([{ text: "AIRTEL", value: "airtel" }]);
         } else if (carrier == "9mobile") {
             $(".provider-logo").html(
                 '<img src="public/images/9mobile.png" width="120px" height="auto" style="border-radius: 20px; box-shadow: 2px 1px 1px 2px #ece4e4;" />'
             );
             $("#identifier").val('9mobile');
+            replaceOptions([{ text: "9MOBILE", value: "etisalat" }]);
         }
         $(".trans_id").html(title);
         $("#carrier").val(carrier);
