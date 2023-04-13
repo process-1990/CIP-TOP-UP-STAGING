@@ -508,9 +508,9 @@
                                         <option value="">Select Type</option>
                                         <option value="mtn-gifting">MTN GIFTING</option>
                                         <option value="mtn">MTN SME</option>
-					<option value="glo">GLO</option>
-					<option value="airtel">AIRTEL</option>
-					<option value="etisalat">9MOBILE</option>
+                                        <option value="glo">GLO</option>
+                                        <option value="airtel">AIRTEL</option>
+                                        <option value="etisalat">9MOBILE</option>
                                         <!-- <option value="mtn">MTN SME</option> -->
                                     </select>
                                 </div>
