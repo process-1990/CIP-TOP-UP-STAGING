@@ -106,12 +106,13 @@ $(document).ready(function() {
                 console.log(response.roles);
                 if (response.status == 'success') {
                     $('#loginBtn').html('Redirecting...');
-                    swal("Successful!",
-                        "You have successfully logged in, redirection to dashboard...",
-                        "success");
-                    setTimeout(function() {
-                        window.location.href = "dashboard.php";
-                    }, 5000);
+                    window.location.href = "dashboard.php";
+                    // swal("Successful!",
+                    //     "You have successfully logged in, redirection to dashboard...",
+                    //     "success");
+                    // setTimeout(function() {
+                    //     window.location.href = "dashboard.php";
+                    // }, 5000);
                 } else {
                     $('#loginBtn').html('Submit');
                     swal("Opps!", response.message, 'error');
