@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'base_url' => 'https://api.ciptopup.ng'
+    'base_url' => 'https://testserver.api.ciptopup.ng'
 ];
