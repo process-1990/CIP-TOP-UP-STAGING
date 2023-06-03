@@ -434,12 +434,6 @@
                                     <span class="provider-logo"></span>
                                     <h5 class="text-white mt-3">Please provide details:</h5>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <input class="form-control" name="data_phone_number" id="data_phone_number" type="text" placeholder="Mobile number *">
-                                        <input type="hidden" class="form-control" name="identifier" id="identifier" type="text">
-                                    </div>
-                                </div>
                                 <div class="col-lg-6 mb-2">
                                     <div class="form-group">
                                         <select class="form-control" id="data-type" name="data-type" onchange="typeChecker(this.value);" onselect="typeChecker(this.id);">
