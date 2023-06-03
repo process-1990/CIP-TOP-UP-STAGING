@@ -60,8 +60,8 @@
                                         <td style="font-size: 13px !important;"><span class="badge light badge-success"><?php echo ucfirst($trans->type); ?></span></td>
                                         <td style="font-size: 13px !important;"><strong>#<?php echo $trans->amount; ?></strong></td>
                                         <td style="font-size: 13px !important;"><span class="text-status font-bold"><?php echo $trans->status; ?></span>
-                                        <td style="font-size: 13px !important;"><?php $dat = explode("T", $trans->created_at); echo $dat[0]; ?></td>
-                                    </tr>
+                                        <td style="font-size: 13px !important;"><?php $dat = explode("T", $trans->created_at); echo $dat[0] . ' ' . $dat[1]; ?></td>
+                                  </tr>
                                     <?php } ?>
 
                             </tbody>
